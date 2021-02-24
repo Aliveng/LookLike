@@ -9,6 +9,6 @@ import UIKit
 
 extension UIImage {
     
- //   static let startBgImg = UIImage(imageLiteralResourceName: "start")
+    static let arrowBackImg = UIImage(imageLiteralResourceName: "arrowBack")
    
 }
