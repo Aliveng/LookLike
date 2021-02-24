@@ -19,6 +19,7 @@
 		0F3AE54E25E4E2D10098536D /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE54D25E4E2D10098536D /* Comfortaa-Regular.ttf */; };
 		0F3AE55325E4E3320098536D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE55225E4E3320098536D /* Roboto-Regular.ttf */; };
 		0F3AE55825E4ECCE0098536D /* ofont.ru_Corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE55725E4ECCE0098536D /* ofont.ru_Corbel.ttf */; };
+		0F3EB8D925E68F2D00B1CCCA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */; };
 		47506C0C8ED3F577142A686C /* Pods_LookLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959B9D447CB34B3BF11826B8 /* Pods_LookLikeTests.framework */; };
 		B57CD7FAAB0A2B2BF96FFA6C /* Pods_LookLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A48FB97F84F1804B279BB1 /* Pods_LookLike.framework */; };
 		E34DA16936CF15AE8911B6CA /* Pods_LookLike_LookLikeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D65655EB8626AC1563ED19 /* Pods_LookLike_LookLikeUITests.framework */; };
@@ -63,6 +64,7 @@
 		0F3AE54D25E4E2D10098536D /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		0F3AE55225E4E3320098536D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		0F3AE55725E4ECCE0098536D /* ofont.ru_Corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ofont.ru_Corbel.ttf; sourceTree = "<group>"; };
+		0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		15A48FB97F84F1804B279BB1 /* Pods_LookLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LookLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E453B3FF2D81C836F0F41 /* Pods-LookLike-LookLikeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookLike-LookLikeUITests.release.xcconfig"; path = "Target Support Files/Pods-LookLike-LookLikeUITests/Pods-LookLike-LookLikeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4DC740D6C602BE069FFC74B4 /* Pods-LookLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookLike.debug.xcconfig"; path = "Target Support Files/Pods-LookLike/Pods-LookLike.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				0F3AE4EE25E261690098536D /* AppDelegate.swift */,
-				0F3AE4F225E261690098536D /* LoggedOutViewController.swift */,
+				0F3EB8D125E68B6900B1CCCA /* Screens */,
 				0F3AE4F725E2616A0098536D /* Assets.xcassets */,
 				0F3AE53125E276900098536D /* Resources */,
 				0F3AE4F925E2616A0098536D /* LaunchScreen.storyboard */,
@@ -163,6 +165,15 @@
 				0F3AE53525E276900098536D /* Images.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0F3EB8D125E68B6900B1CCCA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0F3AE4F225E261690098536D /* LoggedOutViewController.swift */,
+				0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		2E1668416D94F5B1EDB94187 /* Pods */ = {
@@ -432,6 +443,7 @@
 				0F3AE53925E276900098536D /* Fonts.swift in Sources */,
 				0F3AE4F325E261690098536D /* LoggedOutViewController.swift in Sources */,
 				0F3AE53A25E276900098536D /* Images.swift in Sources */,
+				0F3EB8D925E68F2D00B1CCCA /* LoginViewController.swift in Sources */,
 				0F3AE4EF25E261690098536D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
