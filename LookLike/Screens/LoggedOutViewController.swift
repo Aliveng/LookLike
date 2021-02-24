@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class LoggedOutViewController: UIViewController {
-
+    
     lazy var logoTitleView: UIButton = {
         let view = UIButton()
         view.backgroundColor = .clear
@@ -86,19 +86,19 @@ class LoggedOutViewController: UIViewController {
         
         logInButton.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.width.equalTo(167)
+            $0.width.equalTo(view.frame.width / 2.2)
             $0.left.equalToSuperview().offset(14)
             $0.top.equalToSuperview().offset(24)
         }
         
         registerButton.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.width.equalTo(167)
+            $0.width.equalTo(view.frame.width / 2.2)
             $0.right.equalToSuperview().offset(-14)
             $0.top.equalToSuperview().offset(24)
         }
     }
-
+    
     @objc
     private func didTapLogInButton() {
         let controller = LoginViewController()
@@ -108,9 +108,8 @@ class LoggedOutViewController: UIViewController {
     
     @objc
     private func didTapRegisterButton() {
-     //   let controller = RegisterViewController()
-    //    navigationController?.pushViewController(controller, animated: true)
+        //   let controller = RegisterViewController()
+        //    navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - переход на Регистрацию")
     }
-    
 }
