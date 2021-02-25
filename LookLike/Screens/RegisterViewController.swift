@@ -5,16 +5,15 @@
 //  Created by Татьяна Севостьянова on 25.02.2021.
 //
 
-
 import UIKit
 import SnapKit
+
 
 class RegisterViewController: UIViewController {
     
     lazy var arrowBackButton: UIButton = {
         let view = UIButton()
         view.setImage(.arrowBackImg, for: .normal)
-    //    view.tintColor = .grayJack
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addTarget(self,
                        action: #selector(didTapArrowBack),
@@ -134,9 +133,8 @@ class RegisterViewController: UIViewController {
     
     @objc
     private func didTapSignUpButton() {
-        let controller = LoginViewController()
+        let controller = SearchViewController()
         navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - переход после регистрации")
     }
-    
 }

@@ -5,16 +5,15 @@
 //  Created by Татьяна Севостьянова on 24.02.2021.
 //
 
-
 import UIKit
 import SnapKit
+
 
 class LoginViewController: UIViewController {
     
     lazy var arrowBackButton: UIButton = {
         let view = UIButton()
         view.setImage(.arrowBackImg, for: .normal)
-    //    view.tintColor = .grayJack
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addTarget(self,
                        action: #selector(didTapArrowBack),
@@ -122,5 +121,4 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - переход после корректного логина/пароля")
     }
-    
 }
