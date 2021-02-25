@@ -10,5 +10,7 @@ import UIKit
 extension UIImage {
     
     static let arrowBackImg = UIImage(imageLiteralResourceName: "arrowBack")
-   
+    static let eyeImg = UIImage(imageLiteralResourceName: "eye")
+    static let personImg = UIImage(imageLiteralResourceName: "person")
+    static let searchImg = UIImage(imageLiteralResourceName: "search")
 }

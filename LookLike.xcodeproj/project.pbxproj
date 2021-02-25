@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F2BE3D825E78308005630AF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE3D725E78308005630AF /* RegisterViewController.swift */; };
 		0F2BE3DD25E7871F005630AF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE3DC25E7871F005630AF /* SearchViewController.swift */; };
+		0F2BE3E525E7925F005630AF /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE3E425E7925F005630AF /* NavigationView.swift */; };
 		0F3AE4EF25E261690098536D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AE4EE25E261690098536D /* AppDelegate.swift */; };
 		0F3AE4F325E261690098536D /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AE4F225E261690098536D /* LoggedOutViewController.swift */; };
 		0F3AE4F825E2616A0098536D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE4F725E2616A0098536D /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		09D0E88FEC0B472AC128A7AA /* Pods-LookLike-LookLikeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookLike-LookLikeUITests.debug.xcconfig"; path = "Target Support Files/Pods-LookLike-LookLikeUITests/Pods-LookLike-LookLikeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F2BE3D725E78308005630AF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0F2BE3DC25E7871F005630AF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0F2BE3E425E7925F005630AF /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		0F3AE4EB25E261690098536D /* LookLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3AE4EE25E261690098536D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F3AE4F225E261690098536D /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2BE3E925E79AB2005630AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F2BE3E425E7925F005630AF /* NavigationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0F3AE4E225E261690098536D = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +184,7 @@
 		0F3EB8D125E68B6900B1CCCA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0F2BE3E925E79AB2005630AF /* Views */,
 				0F3AE4F225E261690098536D /* LoggedOutViewController.swift */,
 				0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */,
 				0F2BE3D725E78308005630AF /* RegisterViewController.swift */,
@@ -448,6 +459,7 @@
 			files = (
 				0F3AE53925E276900098536D /* Fonts.swift in Sources */,
 				0F2BE3DD25E7871F005630AF /* SearchViewController.swift in Sources */,
+				0F2BE3E525E7925F005630AF /* NavigationView.swift in Sources */,
 				0F3AE4F325E261690098536D /* LoggedOutViewController.swift in Sources */,
 				0F3AE53A25E276900098536D /* Images.swift in Sources */,
 				0F2BE3D825E78308005630AF /* RegisterViewController.swift in Sources */,

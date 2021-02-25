@@ -34,7 +34,7 @@ class SearchViewController: UIViewController {
         let view = UIButton()
         view.backgroundColor = .clear
         view.layer.borderWidth = 1
-        view.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        view.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         view.layer.cornerRadius = 6
         view.setTitle("Категории", for: .normal)
         view.titleLabel?.font = .catalogButtonsFont(size: 18, weight: .regular)
@@ -49,7 +49,7 @@ class SearchViewController: UIViewController {
         let view = UIButton()
         view.backgroundColor = .clear
         view.layer.borderWidth = 1
-        view.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        view.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         view.layer.cornerRadius = 6
         view.setTitle("Бренды", for: .normal)
         view.titleLabel?.font = .catalogButtonsFont(size: 18, weight: .regular)
@@ -60,16 +60,22 @@ class SearchViewController: UIViewController {
         return view
     }()
     
+    lazy var navigationPanelView: NavigationView = {
+        let view = NavigationView(navigationController: self.navigationController!)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationItem.setHidesBackButton(true, animated: true)
         
         view.addSubview(titleLabel)
         view.addSubview(searchTextField)
         view.addSubview(categoriesButton)
         view.addSubview(brandsButton)
+        view.addSubview(navigationPanelView)
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -96,6 +102,13 @@ class SearchViewController: UIViewController {
             $0.right.equalToSuperview().offset(-14)
             $0.top.equalTo(searchTextField.snp.bottom).offset(21)
         }
+        
+        navigationPanelView.snp.makeConstraints({ item in
+            item.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            item.height.equalTo(50)
+            item.left.equalToSuperview()
+            item.right.equalToSuperview()
+        })
     }
     
     @objc
