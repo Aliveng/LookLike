@@ -113,8 +113,8 @@ class SearchViewController: UIViewController {
     
     @objc
     private func didTapCategoriesButton() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
+        let controller = DiscoverViewController()
+        navigationController?.pushViewController(controller, animated: true)
         categoriesButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         categoriesButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         categoriesButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
