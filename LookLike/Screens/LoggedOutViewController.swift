@@ -108,8 +108,8 @@ class LoggedOutViewController: UIViewController {
     
     @objc
     private func didTapRegisterButton() {
-        //   let controller = RegisterViewController()
-        //    navigationController?.pushViewController(controller, animated: true)
+        let controller = RegisterViewController()
+        navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - переход на Регистрацию")
     }
 }

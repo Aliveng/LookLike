@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2BE3D825E78308005630AF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE3D725E78308005630AF /* RegisterViewController.swift */; };
 		0F3AE4EF25E261690098536D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AE4EE25E261690098536D /* AppDelegate.swift */; };
 		0F3AE4F325E261690098536D /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3AE4F225E261690098536D /* LoggedOutViewController.swift */; };
 		0F3AE4F825E2616A0098536D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE4F725E2616A0098536D /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		00D3E54545A61309C2FE81C3 /* Pods-LookLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookLike.release.xcconfig"; path = "Target Support Files/Pods-LookLike/Pods-LookLike.release.xcconfig"; sourceTree = "<group>"; };
 		02D65655EB8626AC1563ED19 /* Pods_LookLike_LookLikeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LookLike_LookLikeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D0E88FEC0B472AC128A7AA /* Pods-LookLike-LookLikeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookLike-LookLikeUITests.debug.xcconfig"; path = "Target Support Files/Pods-LookLike-LookLikeUITests/Pods-LookLike-LookLikeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F2BE3D725E78308005630AF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0F3AE4EB25E261690098536D /* LookLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3AE4EE25E261690098536D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F3AE4F225E261690098536D /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				0F3AE4F225E261690098536D /* LoggedOutViewController.swift */,
 				0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */,
+				0F2BE3D725E78308005630AF /* RegisterViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				0F3AE53925E276900098536D /* Fonts.swift in Sources */,
 				0F3AE4F325E261690098536D /* LoggedOutViewController.swift in Sources */,
 				0F3AE53A25E276900098536D /* Images.swift in Sources */,
+				0F2BE3D825E78308005630AF /* RegisterViewController.swift in Sources */,
 				0F3EB8D925E68F2D00B1CCCA /* LoginViewController.swift in Sources */,
 				0F3AE4EF25E261690098536D /* AppDelegate.swift in Sources */,
 			);
