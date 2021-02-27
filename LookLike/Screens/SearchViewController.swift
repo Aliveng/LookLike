@@ -73,9 +73,10 @@ class SearchViewController: UIViewController {
         
         view.addSubview(titleLabel)
         view.addSubview(searchTextField)
-        view.addSubview(categoriesButton)
-        view.addSubview(brandsButton)
+        
         view.addSubview(navigationPanelView)
+        
+        stackButtonsView()
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -89,26 +90,35 @@ class SearchViewController: UIViewController {
             $0.top.equalTo(titleLabel.snp.bottom).offset(37)
         }
         
-        categoriesButton.snp.makeConstraints {
-            $0.height.equalTo(50)
-            $0.width.equalTo(view.frame.width / 2.2)
-            $0.left.equalToSuperview().offset(14)
-            $0.top.equalTo(searchTextField.snp.bottom).offset(21)
-        }
-        
-        brandsButton.snp.makeConstraints {
-            $0.height.equalTo(50)
-            $0.width.equalTo(view.frame.width / 2.2)
-            $0.right.equalToSuperview().offset(-14)
-            $0.top.equalTo(searchTextField.snp.bottom).offset(21)
-        }
-        
         navigationPanelView.snp.makeConstraints({ item in
             item.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             item.height.equalTo(50)
             item.left.equalToSuperview()
             item.right.equalToSuperview()
         })
+        
+    }
+    
+    func stackButtonsView() {
+        
+        let buttonsStack = UIStackView(arrangedSubviews: [categoriesButton, brandsButton])
+        buttonsStack.backgroundColor = .clear
+        buttonsStack.axis = .horizontal
+        buttonsStack.distribution = .fillEqually
+        buttonsStack.spacing = 10
+        
+        view.addSubview(buttonsStack)
+        
+        buttonsStack.snp.makeConstraints({ item in
+            item.top.equalTo(searchTextField.snp.bottom).offset(21)
+            item.height.equalTo(50)
+            item.left.equalToSuperview().offset(15)
+            item.right.equalToSuperview().offset(-15)
+        })
+        
+        buttonsStack.addSubview(categoriesButton)
+        buttonsStack.addSubview(brandsButton)
+        
     }
     
     @objc
@@ -127,8 +137,8 @@ class SearchViewController: UIViewController {
     
     @objc
     private func didTapBrandsButton() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
+        let controller = LoginViewController()
+        navigationController?.pushViewController(controller, animated: true)
         brandsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         brandsButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         brandsButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
