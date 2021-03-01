@@ -17,5 +17,6 @@ extension UIImage {
     
     static let mannequinImg = UIImage(imageLiteralResourceName: "mannequin")
     static let bookmarkImg = UIImage(imageLiteralResourceName: "bookmark")
+    static let bookmarkMakedImg = UIImage(imageLiteralResourceName: "bookmarkMaked")
     static let plusImg = UIImage(imageLiteralResourceName: "plus")
 }

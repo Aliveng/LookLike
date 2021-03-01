@@ -162,7 +162,7 @@ class DiscoverViewController: UIViewController {
     private func didTapBookmark() {
         //        let controller = LoginViewController()
         //        navigationController?.pushViewController(controller, animated: true)
-        bookmarkButton.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        bookmarkButton.setImage(.bookmarkMakedImg, for: .normal)
         print("Кнопка - Закладка")
     }
     
