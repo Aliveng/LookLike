@@ -59,22 +59,15 @@ class SearchViewController: UIViewController {
                        for: .touchUpInside)
         return view
     }()
-    
-    lazy var navigationPanelView: NavigationView = {
-        let view = NavigationView(navigationController: self.navigationController!)
-        return view
-    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        navigationItem.setHidesBackButton(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
         view.addSubview(titleLabel)
         view.addSubview(searchTextField)
-        
-        view.addSubview(navigationPanelView)
         
         stackButtonsView()
         
@@ -89,14 +82,6 @@ class SearchViewController: UIViewController {
             $0.right.equalToSuperview().offset(-16)
             $0.top.equalTo(titleLabel.snp.bottom).offset(37)
         }
-        
-        navigationPanelView.snp.makeConstraints({ item in
-            item.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            item.height.equalTo(50)
-            item.left.equalToSuperview()
-            item.right.equalToSuperview()
-        })
-        
     }
     
     func stackButtonsView() {
@@ -105,7 +90,7 @@ class SearchViewController: UIViewController {
         buttonsStack.backgroundColor = .clear
         buttonsStack.axis = .horizontal
         buttonsStack.distribution = .fillEqually
-        buttonsStack.spacing = 10
+        buttonsStack.spacing = 25
         
         view.addSubview(buttonsStack)
         

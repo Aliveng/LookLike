@@ -92,31 +92,24 @@ class DiscoverViewController: UIViewController {
         return view
     }()
     
-    
-    lazy var navigationPanelView: NavigationView = {
-        let view = NavigationView(navigationController: self.navigationController!)
-        return view
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        navigationItem.setHidesBackButton(true, animated: true)
-        
-        view.addSubview(titleLabel)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+
         view.addSubview(bookmarkButton)
         view.addSubview(mannequinBackgroundImg)
+        view.addSubview(titleLabel)
         view.addSubview(addHeadwearButton)
         view.addSubview(addTopClothesButton)
         view.addSubview(addBottomClothesButton)
         view.addSubview(addBagButton)
         view.addSubview(addShoesButton)
-        view.addSubview(navigationPanelView)
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
-            $0.top.equalToSuperview().offset(84)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
         }
         
         bookmarkButton.snp.makeConstraints {
@@ -125,8 +118,8 @@ class DiscoverViewController: UIViewController {
         }
         
         mannequinBackgroundImg.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom).offset(44)
+            $0.centerY.equalToSuperview().offset(35)
+            $0.centerX.equalToSuperview()
         }
         
         addHeadwearButton.snp.makeConstraints {
@@ -163,13 +156,6 @@ class DiscoverViewController: UIViewController {
             $0.right.equalTo(mannequinBackgroundImg.snp.right).offset(-31)
             $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).offset(-16)
         }
-        
-        navigationPanelView.snp.makeConstraints({ item in
-            item.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            item.height.equalTo(50)
-            item.left.equalToSuperview()
-            item.right.equalToSuperview()
-        })
     }
     
     @objc
