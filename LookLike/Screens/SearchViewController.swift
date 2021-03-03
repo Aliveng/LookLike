@@ -69,7 +69,7 @@ class SearchViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(searchTextField)
         
-        stackButtonsView()
+        stackSearchButtonsView()
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -84,7 +84,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    func stackButtonsView() {
+    func stackSearchButtonsView() {
         
         let buttonsStack = UIStackView(arrangedSubviews: [categoriesButton, brandsButton])
         buttonsStack.backgroundColor = .clear

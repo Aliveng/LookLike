@@ -19,4 +19,7 @@ extension UIImage {
     static let bookmarkImg = UIImage(imageLiteralResourceName: "bookmark")
     static let bookmarkMakedImg = UIImage(imageLiteralResourceName: "bookmarkMaked")
     static let plusImg = UIImage(imageLiteralResourceName: "plus")
+    
+    static let avatarImg = UIImage(imageLiteralResourceName: "Ellipse")
+    static let gearWheelImg = UIImage(imageLiteralResourceName: "brightness_low")
 }
