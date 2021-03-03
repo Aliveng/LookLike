@@ -60,11 +60,15 @@ class LoggedOutViewController: UIViewController {
         return view
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        navigationController?.setNavigationBarHidden(true, animated: true)
         
         view.addSubview(logoTitleView)
         view.addSubview(buttonsCardView)
