@@ -76,16 +76,14 @@ class LoggedOutViewController: UIViewController {
         buttonsCardView.addSubview(registerButton)
         
         logoTitleView.snp.makeConstraints {
-            $0.height.equalTo(200)
-            $0.width.equalTo(200)
+            $0.height.width.equalTo(200)
             $0.center.equalToSuperview()
-            $0.centerY.equalToSuperview().offset(-105)
+            $0.centerY.equalToSuperview().offset(-105) // криво с положительным значением
         }
         
         buttonsCardView.snp.makeConstraints {
             $0.height.equalTo(105)
-            $0.left.equalToSuperview()
-            $0.right.equalToSuperview()
+            $0.left.right.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
@@ -99,7 +97,7 @@ class LoggedOutViewController: UIViewController {
         registerButton.snp.makeConstraints {
             $0.height.equalTo(52)
             $0.width.equalTo(view.frame.width / 2.2)
-            $0.right.equalToSuperview().offset(-14)
+            $0.right.equalToSuperview().inset(14)
             $0.top.equalToSuperview().offset(24)
         }
     }

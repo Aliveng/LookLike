@@ -103,28 +103,25 @@ class RegisterViewController: UIViewController {
         
         loginTextField.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
+            $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(titleLabel.snp.bottom).offset(24)
         }
         
         passwordTextField.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
+            $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(loginTextField.snp.bottom).offset(16)
         }
         
         signUpButton.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
+            $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(passwordTextField.snp.bottom).offset(16)
         }
         
         agreementLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(22)
-            $0.right.equalToSuperview().offset(-10)
+            $0.right.equalToSuperview().inset(10)
             $0.top.equalTo(signUpButton.snp.bottom).offset(21)
         }
     }

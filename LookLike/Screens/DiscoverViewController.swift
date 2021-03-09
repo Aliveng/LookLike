@@ -113,7 +113,7 @@ class DiscoverViewController: UIViewController {
         }
         
         bookmarkButton.snp.makeConstraints {
-            $0.right.equalToSuperview().offset(-42)
+            $0.right.equalToSuperview().inset(42)
             $0.centerY.equalTo(titleLabel)
         }
         
@@ -123,38 +123,33 @@ class DiscoverViewController: UIViewController {
         }
         
         addHeadwearButton.snp.makeConstraints {
-            $0.height.equalTo(24)
-            $0.width.equalTo(24)
-            $0.right.equalTo(mannequinBackgroundImg.snp.right).offset(-80)
+            $0.height.width.equalTo(24)
+            $0.right.equalTo(mannequinBackgroundImg.snp.right).inset(80)
             $0.top.equalTo(mannequinBackgroundImg.snp.top)
         }
         
         addTopClothesButton.snp.makeConstraints {
-            $0.height.equalTo(24)
-            $0.width.equalTo(24)
+            $0.height.width.equalTo(24)
             $0.left.equalTo(mannequinBackgroundImg.snp.left)
             $0.top.equalTo(mannequinBackgroundImg.snp.top).offset(120)
         }
         
         addBottomClothesButton.snp.makeConstraints {
-            $0.height.equalTo(24)
-            $0.width.equalTo(24)
+            $0.height.width.equalTo(24)
             $0.left.equalTo(mannequinBackgroundImg.snp.left).offset(28)
-            $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).offset(-183)
+            $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(183)
         }
         
         addBagButton.snp.makeConstraints {
-            $0.height.equalTo(24)
-            $0.width.equalTo(24)
-            $0.left.equalTo(mannequinBackgroundImg.snp.right).offset(-18)
-            $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).offset(-220)
+            $0.height.width.equalTo(24)
+            $0.left.equalTo(mannequinBackgroundImg.snp.right).inset(18)
+            $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(220)
         }
         
         addShoesButton.snp.makeConstraints {
-            $0.height.equalTo(24)
-            $0.width.equalTo(24)
-            $0.right.equalTo(mannequinBackgroundImg.snp.right).offset(-31)
-            $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).offset(-16)
+            $0.height.width.equalTo(24)
+            $0.right.equalTo(mannequinBackgroundImg.snp.right).inset(31)
+            $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(16)
         }
     }
     

@@ -93,22 +93,19 @@ class LoginViewController: UIViewController {
         
         loginTextField.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
+            $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(titleLabel.snp.bottom).offset(24)
         }
         
         passwordTextField.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
+            $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(loginTextField.snp.bottom).offset(16)
         }
         
         logInButton.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
+            $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(passwordTextField.snp.bottom).offset(16)
         }
     }

@@ -100,10 +100,9 @@ class ProfileViewController: UIViewController {
         }
         
         avatarImg.snp.makeConstraints {
-            $0.height.equalTo(100)
-            $0.width.equalTo(100)
+            $0.height.width.equalTo(100)
             $0.top.equalToSuperview().offset(89)
-            $0.right.equalToSuperview().offset(-60)
+            $0.right.equalToSuperview().inset(60)
         }
         
         settingsButton.snp.makeConstraints {
@@ -122,12 +121,11 @@ class ProfileViewController: UIViewController {
         
         view.addSubview(buttonsStack)
         
-        buttonsStack.snp.makeConstraints({ item in
-            item.top.equalTo(emailLabel.snp.bottom).offset(89)
-            item.height.equalTo(50)
-            item.left.equalToSuperview().offset(15)
-            item.right.equalToSuperview().offset(-15)
-        })
+        buttonsStack.snp.makeConstraints {
+            $0.top.equalTo(emailLabel.snp.bottom).offset(89)
+            $0.height.equalTo(50)
+            $0.left.right.equalToSuperview().inset(15)
+        }
         
         buttonsStack.addSubview(myLooksButton)
         buttonsStack.addSubview(favoriteBrandsButton)

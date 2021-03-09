@@ -42,23 +42,21 @@ class ItemCell: UICollectionViewCell {
         addSubview(nameView)
         nameView.addSubview(name)
         
-        image.snp.makeConstraints({ item in
-            item.height.equalToSuperview()
-            item.left.equalToSuperview()
-            item.right.equalToSuperview()
-            item.top.equalToSuperview()
-        })
+        image.snp.makeConstraints {
+            $0.height.equalToSuperview()
+            $0.left.right.equalToSuperview()
+            $0.top.equalToSuperview()
+        }
         
-        nameView.snp.makeConstraints({ item in
-            item.height.equalTo(23)
-            item.left.equalToSuperview()
-            item.right.equalToSuperview()
-            item.bottom.equalToSuperview()
-        })
+        nameView.snp.makeConstraints {
+            $0.height.equalTo(23)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
         
-        name.snp.makeConstraints({ item in
-            item.center.equalToSuperview()
-        })
+        name.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
     
     required init?(coder: NSCoder) {

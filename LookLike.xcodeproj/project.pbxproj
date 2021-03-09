@@ -113,13 +113,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F2BE3E925E79AB2005630AF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		0F3AE4E225E261690098536D = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +182,6 @@
 		0F3EB8D125E68B6900B1CCCA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0F2BE3E925E79AB2005630AF /* Views */,
 				0F3AE4F225E261690098536D /* LoggedOutViewController.swift */,
 				0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */,
 				0F2BE3D725E78308005630AF /* RegisterViewController.swift */,

@@ -61,13 +61,13 @@ class SearchViewController: UIViewController {
     }()
     
     var viewModel: CategoriesSearchViewModel
-    
+
     lazy var itemsCollectionView: UICollectionView = {
-        
+
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 95, height: 107)
         layout.sectionInset = .init(top: 8, left: 8, bottom: 0, right: 8)
-        
+
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
         view.register(ItemCell.self, forCellWithReuseIdentifier: "ItemCell")
@@ -76,12 +76,12 @@ class SearchViewController: UIViewController {
         view.delegate = self
         return view
     }()
-    
+
     init(viewModel: CategoriesSearchViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -111,17 +111,15 @@ class SearchViewController: UIViewController {
         
         searchTextField.snp.makeConstraints {
             $0.height.equalTo(52)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
+            $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(titleLabel.snp.bottom).offset(37)
         }
         
-        itemsCollectionView.snp.makeConstraints({ item in
-            item.left.equalToSuperview().offset(15)
-            item.right.equalToSuperview().offset(-15)
-            item.bottom.equalToSuperview()
-            item.top.equalTo(categoriesButton.snp.bottom).offset(21)
-        })
+        itemsCollectionView.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview()
+            $0.top.equalTo(categoriesButton.snp.bottom).offset(21)
+        }
         
         viewModel.loadData()
     }
@@ -136,12 +134,11 @@ class SearchViewController: UIViewController {
         
         view.addSubview(buttonsStack)
         
-        buttonsStack.snp.makeConstraints({ item in
-            item.top.equalTo(searchTextField.snp.bottom).offset(21)
-            item.height.equalTo(50)
-            item.left.equalToSuperview().offset(15)
-            item.right.equalToSuperview().offset(-15)
-        })
+        buttonsStack.snp.makeConstraints {
+            $0.top.equalTo(searchTextField.snp.bottom).offset(21)
+            $0.height.equalTo(50)
+            $0.left.right.equalToSuperview().inset(15)
+        }
         
         buttonsStack.addSubview(categoriesButton)
         buttonsStack.addSubview(brandsButton)
