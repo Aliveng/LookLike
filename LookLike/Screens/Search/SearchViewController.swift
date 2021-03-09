@@ -59,9 +59,35 @@ class SearchViewController: UIViewController {
                        for: .touchUpInside)
         return view
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    var viewModel: CategoriesSearchViewModel
+    
+    lazy var itemsCollectionView: UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 95, height: 107)
+        layout.sectionInset = .init(top: 8, left: 8, bottom: 0, right: 8)
+        
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = .clear
+        view.register(ItemCell.self, forCellWithReuseIdentifier: "ItemCell")
+        view.showsVerticalScrollIndicator = false
+        view.dataSource = self
+        view.delegate = self
+        return view
+    }()
+    
+    init(viewModel: CategoriesSearchViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        super.loadView()
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -70,6 +96,13 @@ class SearchViewController: UIViewController {
         view.addSubview(searchTextField)
         
         stackSearchButtonsView()
+        
+        view.addSubview(itemsCollectionView)
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -82,6 +115,15 @@ class SearchViewController: UIViewController {
             $0.right.equalToSuperview().offset(-16)
             $0.top.equalTo(titleLabel.snp.bottom).offset(37)
         }
+        
+        itemsCollectionView.snp.makeConstraints({ item in
+            item.left.equalToSuperview().offset(15)
+            item.right.equalToSuperview().offset(-15)
+            item.bottom.equalToSuperview()
+            item.top.equalTo(categoriesButton.snp.bottom).offset(21)
+        })
+        
+        viewModel.loadData()
     }
     
     func stackSearchButtonsView() {
@@ -132,5 +174,26 @@ class SearchViewController: UIViewController {
         categoriesButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         categoriesButton.setTitleColor( #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         print("Кнопка - выбор Бренды")
+    }
+}
+
+extension SearchViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.categoriesImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath)
+        (cell as? ItemCell)?.image.image = viewModel.categoriesImages[indexPath.row].image
+        (cell as? ItemCell)?.name.text = "\(viewModel.categoriesImages[indexPath.row].name)"
+        
+        return cell
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Выбрана ячейка с номером \(indexPath.row)")
     }
 }

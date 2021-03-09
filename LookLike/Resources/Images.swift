@@ -22,4 +22,15 @@ extension UIImage {
     
     static let avatarImg = UIImage(imageLiteralResourceName: "Ellipse")
     static let gearWheelImg = UIImage(imageLiteralResourceName: "brightness_low")
+    
+    static let blazer = UIImage(imageLiteralResourceName: "blazer")
+    static let jacket = UIImage(imageLiteralResourceName: "jacket")
+    static let tshirt = UIImage(imageLiteralResourceName: "tshirt")
+    static let shirt = UIImage(imageLiteralResourceName: "shirt")
+    static let coat = UIImage(imageLiteralResourceName: "coat")
+    static let raincoat = UIImage(imageLiteralResourceName: "raincoat")
+    static let jeans = UIImage(imageLiteralResourceName: "jeans")
+    static let trousers = UIImage(imageLiteralResourceName: "trousers")
+    static let skirt = UIImage(imageLiteralResourceName: "skirt")
+    
 }
