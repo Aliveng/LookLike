@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 
-class ItemCell: UICollectionViewCell {
+class CategoryCell: UICollectionViewCell {
     
     lazy var image: UIImageView = {
         let view = UIImageView()

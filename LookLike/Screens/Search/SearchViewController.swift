@@ -60,7 +60,9 @@ class SearchViewController: UIViewController {
         return view
     }()
     
-    var viewModel: CategoriesSearchViewModel
+    var viewModel: SearchViewModel
+    var brandsViewController: BrandsViewController = BrandsViewController()
+    var categoriesViewController: CategoriesViewController = CategoriesViewController()
 
     lazy var itemsCollectionView: UICollectionView = {
 
@@ -70,14 +72,14 @@ class SearchViewController: UIViewController {
 
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
-        view.register(ItemCell.self, forCellWithReuseIdentifier: "ItemCell")
+        view.register(CategoryCell.self, forCellWithReuseIdentifier: "CategoryCell")
         view.showsVerticalScrollIndicator = false
         view.dataSource = self
         view.delegate = self
         return view
     }()
 
-    init(viewModel: CategoriesSearchViewModel) {
+    init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -93,7 +95,7 @@ class SearchViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self.view,
-                                                         action: #selector(UIView.endEditing(_:))))
+                                                         action: #selector(UIView.endEditing)))
     
         view.addSubview(titleLabel)
         view.addSubview(searchTextField)
@@ -106,6 +108,14 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(brandsViewController.view)
+        view.addSubview(categoriesViewController.view)
+        addChild(brandsViewController)
+        addChild(categoriesViewController)
+        
+        categoriesViewController.view.isHidden = true
+        brandsViewController.view.isHidden = true
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -124,7 +134,21 @@ class SearchViewController: UIViewController {
             $0.top.equalTo(categoriesButton.snp.bottom).offset(21)
         }
         
+        brandsViewController.view.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview()
+            $0.top.equalTo(categoriesButton.snp.bottom).offset(21)
+        }
+        
+        categoriesViewController.view.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview()
+            $0.top.equalTo(categoriesButton.snp.bottom).offset(21)
+        }
+        
         viewModel.loadData()
+        brandsViewController.brands.append(contentsOf: viewModel.brands)
+        categoriesViewController.categories.append(contentsOf: viewModel.categories)
     }
     
     func stackSearchButtonsView() {
@@ -150,8 +174,8 @@ class SearchViewController: UIViewController {
     
     @objc
     private func didTapCategoriesButton() {
-        let controller = DiscoverViewController()
-        navigationController?.pushViewController(controller, animated: true)
+     //   let controller = DiscoverViewController()
+      //  navigationController?.pushViewController(controller, animated: true)
         categoriesButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         categoriesButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         categoriesButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -159,13 +183,16 @@ class SearchViewController: UIViewController {
         brandsButton.backgroundColor = .clear
         brandsButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         brandsButton.setTitleColor( #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        
+        categoriesViewController.view.isHidden = false
+        brandsViewController.view.isHidden = true
         print("Кнопка - выбор Категории")
     }
     
     @objc
     private func didTapBrandsButton() {
-        let controller = LoginViewController()
-        navigationController?.pushViewController(controller, animated: true)
+     //   let controller = LoginViewController()
+     //   navigationController?.pushViewController(controller, animated: true)
         brandsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         brandsButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         brandsButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -173,20 +200,23 @@ class SearchViewController: UIViewController {
         categoriesButton.backgroundColor = .clear
         categoriesButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         categoriesButton.setTitleColor( #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        
+        categoriesViewController.view.isHidden = true
+        brandsViewController.view.isHidden = false
         print("Кнопка - выбор Бренды")
     }
 }
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.categoriesImages.count
+        return viewModel.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath)
-        (cell as? ItemCell)?.image.image = viewModel.categoriesImages[indexPath.row].image
-        (cell as? ItemCell)?.name.text = "\(viewModel.categoriesImages[indexPath.row].name)"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath)
+        (cell as? CategoryCell)?.image.image = viewModel.categories[indexPath.row].image
+        (cell as? CategoryCell)?.name.text = "\(viewModel.categories[indexPath.row].name)"
         
         return cell
     }
