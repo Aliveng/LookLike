@@ -31,8 +31,14 @@ class SearchViewModel {
         ]
         
         brands = [
-            .init(imageLink: "armani"),
+            .init(imageLink: "km"),
             .init(imageLink: "ck"),
+            .init(imageLink: "armani"),
+            .init(imageLink: "fendi"),
+            .init(imageLink: "kenzo"),
+            .init(imageLink: "mango"),
+            .init(imageLink: "tommy"),
+            .init(imageLink: "gucci"),
             .init(imageLink: "hm")
         ]
     }

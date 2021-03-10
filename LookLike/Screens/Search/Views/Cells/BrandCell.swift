@@ -20,7 +20,7 @@ class BrandCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(image)
+        contentView.addSubview(image)
         
         image.snp.makeConstraints {
             $0.height.equalToSuperview()

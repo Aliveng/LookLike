@@ -73,8 +73,8 @@ class SearchViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -86,11 +86,6 @@ class SearchViewController: UIViewController {
         view.addSubview(searchTextField)
         
         stackSearchButtonsView()
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         view.addSubview(brandsViewController.view)
         view.addSubview(categoriesViewController.view)
@@ -114,18 +109,19 @@ class SearchViewController: UIViewController {
         brandsViewController.view.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(15)
             $0.bottom.equalToSuperview()
-            $0.top.equalTo(categoriesButton.snp.bottom).offset(21)
+            $0.top.equalTo(categoriesButton.snp.bottom).offset(37)
         }
         
         categoriesViewController.view.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(15)
             $0.bottom.equalToSuperview()
-            $0.top.equalTo(categoriesButton.snp.bottom).offset(21)
+            $0.top.equalTo(categoriesButton.snp.bottom).offset(37)
         }
         
         viewModel.loadData()
         brandsViewController.brands.append(contentsOf: viewModel.brands)
         categoriesViewController.categories.append(contentsOf: viewModel.categories)
+        
     }
     
     func stackSearchButtonsView() {
@@ -180,4 +176,4 @@ class SearchViewController: UIViewController {
         brandsViewController.view.isHidden = false
         print("Кнопка - выбор Бренды")
     }
-} 
+}

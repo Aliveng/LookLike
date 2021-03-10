@@ -38,8 +38,8 @@ class CategoryCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(image)
-        addSubview(nameView)
+        contentView.addSubview(image)
+        contentView.addSubview(nameView)
         nameView.addSubview(name)
         
         image.snp.makeConstraints {
