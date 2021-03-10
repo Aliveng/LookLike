@@ -14,8 +14,8 @@ class CategoriesViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
 
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 95, height: 107)
-        layout.sectionInset = .init(top: 8, left: 8, bottom: 0, right: 8)
+        layout.itemSize = CGSize(width: 107, height: 107)
+        layout.sectionInset = .init(top: 0, left: 0, bottom: 0, right: 0)
 
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
@@ -31,7 +31,7 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         view.addSubview(collectionView)
         
@@ -40,7 +40,6 @@ class CategoriesViewController: UIViewController {
             $0.bottom.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
-
     }
 }
 
