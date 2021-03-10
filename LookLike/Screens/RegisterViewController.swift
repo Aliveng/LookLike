@@ -140,7 +140,7 @@ class RegisterViewController: UIViewController {
         let searchViewController = SearchViewController(viewModel: SearchViewModel.init())
         searchViewController.tabBarItem = UITabBarItem.init(title: "", image: .searchImg, tag: 1)
         
-        let profileViewController = ProfileViewController()
+        let profileViewController = ProfileViewController(viewModel: ProfileViewModel.init())
         profileViewController.tabBarItem = UITabBarItem.init(title: "", image: .personImg, tag: 2)
         
         let tabBarController = UITabBarController()

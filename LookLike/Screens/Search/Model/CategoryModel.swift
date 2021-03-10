@@ -8,7 +8,9 @@
 import UIKit
 
 struct CategoryModel {
-    let tag: String
+    
+    let position: String
     let image: UIImage
     let name: String
+    
 }

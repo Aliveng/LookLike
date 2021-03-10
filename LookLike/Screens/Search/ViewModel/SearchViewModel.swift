@@ -17,16 +17,16 @@ class SearchViewModel {
         
         categories = [
             
-            CategoryModel(tag: "TopClothes", image: .blazer, name: "Жакет"),
-            CategoryModel(tag: "TopClothes", image: .jacket, name: "Куртка"),
-            CategoryModel(tag: "TopClothes", image: .tshirt, name: "Футболка"),
-            CategoryModel(tag: "TopClothes", image: .shirt, name: "Рубашка"),
-            CategoryModel(tag: "TopClothes", image: .coat, name: "Пальто"),
-            CategoryModel(tag: "TopClothes", image: .raincoat, name: "Плащ"),
+            CategoryModel(position: "TopClothes", image: .blazer, name: "Жакет"),
+            CategoryModel(position: "TopClothes", image: .jacket, name: "Куртка"),
+            CategoryModel(position: "TopClothes", image: .tshirt, name: "Футболка"),
+            CategoryModel(position: "TopClothes", image: .shirt, name: "Рубашка"),
+            CategoryModel(position: "TopClothes", image: .coat, name: "Пальто"),
+            CategoryModel(position: "TopClothes", image: .raincoat, name: "Плащ"),
             
-            CategoryModel(tag: "BottomClothes", image: .jeans, name: "Джинсы"),
-            CategoryModel(tag: "BottomClothes", image: .trousers, name: "Брюки"),
-            CategoryModel(tag: "BottomClothes", image: .skirt, name: "Юбка")
+            CategoryModel(position: "BottomClothes", image: .jeans, name: "Джинсы"),
+            CategoryModel(position: "BottomClothes", image: .trousers, name: "Брюки"),
+            CategoryModel(position: "BottomClothes", image: .skirt, name: "Юбка")
             
         ]
         

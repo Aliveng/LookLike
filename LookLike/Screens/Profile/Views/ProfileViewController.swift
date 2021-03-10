@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     
     lazy var avatarImg: UIImageView = {
         let view = UIImageView(image: .avatarImg)
-        view.layer.cornerRadius = 4
+        view.layer.cornerRadius = 50
         view.clipsToBounds = true
         return view
     }()
@@ -48,13 +48,13 @@ class ProfileViewController: UIViewController {
     
     lazy var myLooksButton: UIButton = {
         let view = UIButton()
-        view.backgroundColor = .clear
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.layer.borderWidth = 1
         view.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.layer.cornerRadius = 6
         view.setTitle("Мои образы", for: .normal)
         view.titleLabel?.font = .catalogButtonsFont(size: 18, weight: .regular)
-        view.setTitleColor( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        view.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         view.addTarget(self,
                        action: #selector(didTapMyLooksButton),
                        for: .touchUpInside)
@@ -76,6 +76,19 @@ class ProfileViewController: UIViewController {
         return view
     }()
 
+    var viewModel: ProfileViewModel
+    var favoriteBrandsViewController: FavoriteBrandsViewController = FavoriteBrandsViewController()
+   // var myLooksViewController: MyLooksViewController = MyLooksViewController()
+
+    init(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,6 +101,9 @@ class ProfileViewController: UIViewController {
         view.addSubview(settingsButton)
         
         stackProfileButtonsView()
+        
+        view.addSubview(favoriteBrandsViewController.view)
+        addChild(favoriteBrandsViewController)
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(42)
@@ -109,6 +125,15 @@ class ProfileViewController: UIViewController {
             $0.left.equalTo(avatarImg.snp.right).offset(11)
             $0.top.equalToSuperview().offset(77)
         }
+        
+        favoriteBrandsViewController.view.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview()
+            $0.top.equalTo(myLooksButton.snp.bottom).offset(27)
+        }
+        
+        viewModel.loadData()
+        favoriteBrandsViewController.favoriteBrands.append(contentsOf: viewModel.favoriteBrands)
     }
     
     func stackProfileButtonsView() {
@@ -141,29 +166,29 @@ class ProfileViewController: UIViewController {
     
     @objc
     private func didTapMyLooksButton() {
-        let controller = DiscoverViewController()
-        navigationController?.pushViewController(controller, animated: true)
+
         myLooksButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         myLooksButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         myLooksButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         
-        myLooksButton.backgroundColor = .clear
-        myLooksButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        myLooksButton.setTitleColor( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        favoriteBrandsButton.backgroundColor = .clear
+        favoriteBrandsButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        favoriteBrandsButton.setTitleColor( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+
         print("Кнопка - выбор Категории")
     }
     
     @objc
     private func didTapFavoriteBrandsButton() {
-        let controller = LoginViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        
         favoriteBrandsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         favoriteBrandsButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         favoriteBrandsButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         
-        favoriteBrandsButton.backgroundColor = .clear
-        favoriteBrandsButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        favoriteBrandsButton.setTitleColor( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        myLooksButton.backgroundColor = .clear
+        myLooksButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        myLooksButton.setTitleColor( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        
         print("Кнопка - выбор Бренды")
     }
 }
