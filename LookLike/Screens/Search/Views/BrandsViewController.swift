@@ -21,7 +21,7 @@ class BrandsViewController: UIViewController {
         view.register(BrandCell.self, forCellWithReuseIdentifier: "BrandCell")
         view.showsVerticalScrollIndicator = false
         view.dataSource = self
-   //     view.delegate = self
+        view.delegate = self
         return view
     }()
     
@@ -39,7 +39,6 @@ class BrandsViewController: UIViewController {
             $0.bottom.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
-
     }
 }
 

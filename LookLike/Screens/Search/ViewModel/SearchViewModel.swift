@@ -24,9 +24,9 @@ class SearchViewModel {
             CategoryModel(tag: "TopClothes", image: .coat, name: "Пальто"),
             CategoryModel(tag: "TopClothes", image: .raincoat, name: "Плащ"),
             
-            //            Item(tag: "BottomClothes", image: .jeans, name: "Джинсы"),
-            //            Item(tag: "BottomClothes", image: .trousers, name: "Брюки"),
-            //            Item(tag: "BottomClothes", image: .skirt, name: "Юбка")
+            CategoryModel(tag: "BottomClothes", image: .jeans, name: "Джинсы"),
+            CategoryModel(tag: "BottomClothes", image: .trousers, name: "Брюки"),
+            CategoryModel(tag: "BottomClothes", image: .skirt, name: "Юбка")
             
         ]
         

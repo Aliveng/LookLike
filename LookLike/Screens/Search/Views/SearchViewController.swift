@@ -64,21 +64,6 @@ class SearchViewController: UIViewController {
     var brandsViewController: BrandsViewController = BrandsViewController()
     var categoriesViewController: CategoriesViewController = CategoriesViewController()
 
-    lazy var itemsCollectionView: UICollectionView = {
-
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 95, height: 107)
-        layout.sectionInset = .init(top: 8, left: 8, bottom: 0, right: 8)
-
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .clear
-        view.register(CategoryCell.self, forCellWithReuseIdentifier: "CategoryCell")
-        view.showsVerticalScrollIndicator = false
-        view.dataSource = self
-        view.delegate = self
-        return view
-    }()
-
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -102,8 +87,6 @@ class SearchViewController: UIViewController {
         
         stackSearchButtonsView()
         
-        view.addSubview(itemsCollectionView)
-        
     }
     
     override func viewDidLoad() {
@@ -126,12 +109,6 @@ class SearchViewController: UIViewController {
             $0.height.equalTo(52)
             $0.left.right.equalToSuperview().inset(16)
             $0.top.equalTo(titleLabel.snp.bottom).offset(37)
-        }
-        
-        itemsCollectionView.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(15)
-            $0.bottom.equalToSuperview()
-            $0.top.equalTo(categoriesButton.snp.bottom).offset(21)
         }
         
         brandsViewController.view.snp.makeConstraints {
@@ -174,8 +151,7 @@ class SearchViewController: UIViewController {
     
     @objc
     private func didTapCategoriesButton() {
-     //   let controller = DiscoverViewController()
-      //  navigationController?.pushViewController(controller, animated: true)
+
         categoriesButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         categoriesButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         categoriesButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -191,8 +167,7 @@ class SearchViewController: UIViewController {
     
     @objc
     private func didTapBrandsButton() {
-     //   let controller = LoginViewController()
-     //   navigationController?.pushViewController(controller, animated: true)
+
         brandsButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         brandsButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         brandsButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -205,25 +180,4 @@ class SearchViewController: UIViewController {
         brandsViewController.view.isHidden = false
         print("Кнопка - выбор Бренды")
     }
-}
-
-extension SearchViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.categories.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath)
-        (cell as? CategoryCell)?.image.image = viewModel.categories[indexPath.row].image
-        (cell as? CategoryCell)?.name.text = "\(viewModel.categories[indexPath.row].name)"
-        
-        return cell
-    }
-}
-
-extension SearchViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Выбрана ячейка с номером \(indexPath.row)")
-    }
-}
+} 

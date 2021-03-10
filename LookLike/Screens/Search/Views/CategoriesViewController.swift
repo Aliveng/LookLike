@@ -22,7 +22,7 @@ class CategoriesViewController: UIViewController {
         view.register(CategoryCell.self, forCellWithReuseIdentifier: "CategoryCell")
         view.showsVerticalScrollIndicator = false
         view.dataSource = self
- //       view.delegate = self
+        view.delegate = self
         return view
     }()
     

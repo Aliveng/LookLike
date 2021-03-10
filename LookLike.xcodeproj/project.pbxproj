@@ -210,7 +210,6 @@
 			children = (
 				0FCD36AF25F7EDA100DCEFEF /* Model */,
 				0FCD369C25F7E5B300DCEFEF /* Views */,
-				0F2BE3DC25E7871F005630AF /* SearchViewController.swift */,
 				0FCD368E25F758D600DCEFEF /* ViewModel */,
 			);
 			path = Search;
@@ -227,6 +226,7 @@
 		0FCD369C25F7E5B300DCEFEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2BE3DC25E7871F005630AF /* SearchViewController.swift */,
 				0FCD36BA25F7F05900DCEFEF /* Cells */,
 				0FCD369D25F7E6E200DCEFEF /* BrandsViewController.swift */,
 				0FCD36A225F7E9D300DCEFEF /* CategoriesViewController.swift */,
