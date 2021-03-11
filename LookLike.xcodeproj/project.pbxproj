@@ -24,6 +24,10 @@
 		0F3AE55825E4ECCE0098536D /* ofont.ru_Corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE55725E4ECCE0098536D /* ofont.ru_Corbel.ttf */; };
 		0F3EB8D925E68F2D00B1CCCA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */; };
 		0F40DF6825ECC95B00AF9A72 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F40DF6725ECC95B00AF9A72 /* ProfileViewController.swift */; };
+		0F43B10B25FA0C6100C7A046 /* MyLooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43B10A25FA0C6100C7A046 /* MyLooksModel.swift */; };
+		0F43B11025FA105000C7A046 /* MyLooks.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F43B10F25FA105000C7A046 /* MyLooks.xcassets */; };
+		0F43B11525FA113000C7A046 /* MyLooksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43B11425FA113000C7A046 /* MyLooksCell.swift */; };
+		0F43B11D25FA121F00C7A046 /* MyLooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43B11C25FA121F00C7A046 /* MyLooksViewController.swift */; };
 		0F4DBA1225F8B8AF00949236 /* Categories.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F4DBA1125F8B8AF00949236 /* Categories.xcassets */; };
 		0FCD369025F7593C00DCEFEF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */; };
 		0FCD369525F768C300DCEFEF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD369425F768C300DCEFEF /* CategoryCell.swift */; };
@@ -87,6 +91,10 @@
 		0F3AE55725E4ECCE0098536D /* ofont.ru_Corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ofont.ru_Corbel.ttf; sourceTree = "<group>"; };
 		0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F40DF6725ECC95B00AF9A72 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0F43B10A25FA0C6100C7A046 /* MyLooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLooksModel.swift; sourceTree = "<group>"; };
+		0F43B10F25FA105000C7A046 /* MyLooks.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MyLooks.xcassets; sourceTree = "<group>"; };
+		0F43B11425FA113000C7A046 /* MyLooksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLooksCell.swift; sourceTree = "<group>"; };
+		0F43B11C25FA121F00C7A046 /* MyLooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLooksViewController.swift; sourceTree = "<group>"; };
 		0F4DBA1125F8B8AF00949236 /* Categories.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Categories.xcassets; sourceTree = "<group>"; };
 		0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0FCD369425F768C300DCEFEF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -196,6 +204,7 @@
 				0F4DBA1125F8B8AF00949236 /* Categories.xcassets */,
 				0FCD36A725F7ED2600DCEFEF /* Brands.xcassets */,
 				0FDFDEC725F92B060049AEB1 /* FavoriteBrands.xcassets */,
+				0F43B10F25FA105000C7A046 /* MyLooks.xcassets */,
 				0F3AE54525E285C60098536D /* Questrial-Regular.otf */,
 				0F3AE54D25E4E2D10098536D /* Comfortaa-Regular.ttf */,
 				0F3AE55225E4E3320098536D /* Roboto-Regular.ttf */,
@@ -282,6 +291,7 @@
 				0F40DF6725ECC95B00AF9A72 /* ProfileViewController.swift */,
 				0FDFDEBB25F926EE0049AEB1 /* Cells */,
 				0FDFDE9D25F924420049AEB1 /* FavoriteBrandsViewController.swift */,
+				0F43B11C25FA121F00C7A046 /* MyLooksViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				0FDFDEA325F925710049AEB1 /* FavoriteBrandsModel.swift */,
+				0F43B10A25FA0C6100C7A046 /* MyLooksModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				0FDFDEBC25F9270F0049AEB1 /* FavoriteBrandsCell.swift */,
+				0F43B11425FA113000C7A046 /* MyLooksCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -441,6 +453,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F43B11025FA105000C7A046 /* MyLooks.xcassets in Resources */,
 				0F3AE55825E4ECCE0098536D /* ofont.ru_Corbel.ttf in Resources */,
 				0F3AE54E25E4E2D10098536D /* Comfortaa-Regular.ttf in Resources */,
 				0FCD36A825F7ED2600DCEFEF /* Brands.xcassets in Resources */,
@@ -580,6 +593,7 @@
 				0FCD369025F7593C00DCEFEF /* SearchViewModel.swift in Sources */,
 				0FCD36BC25F7F07A00DCEFEF /* BrandCell.swift in Sources */,
 				0F2BE3F125E7A346005630AF /* DiscoverViewController.swift in Sources */,
+				0F43B10B25FA0C6100C7A046 /* MyLooksModel.swift in Sources */,
 				0FDFDEA425F925710049AEB1 /* FavoriteBrandsModel.swift in Sources */,
 				0F3AE53925E276900098536D /* Fonts.swift in Sources */,
 				0FCD369525F768C300DCEFEF /* CategoryCell.swift in Sources */,
@@ -596,6 +610,8 @@
 				0FCD36B125F7EDF000DCEFEF /* CategoryModel.swift in Sources */,
 				0FCD36B625F7EED100DCEFEF /* BrandModel.swift in Sources */,
 				0F3AE4EF25E261690098536D /* AppDelegate.swift in Sources */,
+				0F43B11D25FA121F00C7A046 /* MyLooksViewController.swift in Sources */,
+				0F43B11525FA113000C7A046 /* MyLooksCell.swift in Sources */,
 				0FCD36A325F7E9D300DCEFEF /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

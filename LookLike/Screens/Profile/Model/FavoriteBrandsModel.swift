@@ -9,6 +9,6 @@ struct FavoriteBrandsModel {
     
     let imageLink: String
     let brand: String
-    let price: Int
+    let price: String
  
 }

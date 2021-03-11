@@ -9,14 +9,15 @@
 import UIKit
 import SnapKit
 
+
 class FavoriteBrandsViewController: UIViewController {
     
     lazy var collectionView: UICollectionView = {
-
+        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 159, height: 241)
         layout.sectionInset = .init(top: 0, left: 0, bottom: 0, right: 0)
-
+        
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
         view.register(FavoriteBrandsCell.self, forCellWithReuseIdentifier: "FavoriteBrandsCell")
@@ -51,7 +52,9 @@ extension FavoriteBrandsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteBrandsCell", for: indexPath)
-        (cell as? FavoriteBrandsCell)?.image.image = UIImage.init(named: favoriteBrands[indexPath.row].imageLink)
+        (cell as? FavoriteBrandsCell)?.image.image = UIImage.init(named:favoriteBrands[indexPath.row].imageLink)
+        (cell as? FavoriteBrandsCell)?.brandLabel.text = "\(favoriteBrands[indexPath.row].brand)"
+        (cell as? FavoriteBrandsCell)?.price.text = "\(favoriteBrands[indexPath.row].price)"
         
         return cell
     }

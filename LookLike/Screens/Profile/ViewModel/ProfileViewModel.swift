@@ -8,25 +8,28 @@
 
 import UIKit
 
+
 class ProfileViewModel {
     
     var title = ""
     var favoriteBrands: [FavoriteBrandsModel] = []
-  //  var myLooks: [MyLooksModel] = []
+    var myLooks: [MyLooksModel] = []
     
     func loadData() {
         
         favoriteBrands = [
-        
-            FavoriteBrandsModel(imageLink: "jacketNoBackground", brand: "The North Face", price: 27000),
-            FavoriteBrandsModel(imageLink: "raincoatLegless", brand: "Karen Millen", price: 32000)
+            
+            FavoriteBrandsModel(imageLink: "jacketNoBackground", brand: "The North Face", price: "27 000 руб."),
+            FavoriteBrandsModel(imageLink: "raincoatLegless", brand: "Karen Millen", price: "32 000 руб."),
+            FavoriteBrandsModel(imageLink: "Shoes", brand: "Prada", price: "43 000 руб.")
             
         ]
-
-//        myLooks = [
         
-        
-//        ]
-        
+        myLooks = [ // пока String, но возможно массивы, если по картинкам решим сохранять
+            
+            MyLooksModel(position: "TopClothes", imageLink: "look1"),
+            MyLooksModel(position: "TopClothes", imageLink: "look2")
+            
+        ]
     }
 }

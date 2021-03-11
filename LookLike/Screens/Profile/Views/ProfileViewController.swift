@@ -75,16 +75,16 @@ class ProfileViewController: UIViewController {
                        for: .touchUpInside)
         return view
     }()
-
+    
     var viewModel: ProfileViewModel
     var favoriteBrandsViewController: FavoriteBrandsViewController = FavoriteBrandsViewController()
-   // var myLooksViewController: MyLooksViewController = MyLooksViewController()
-
+    var myLooksViewController: MyLooksViewController = MyLooksViewController()
+    
     init(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -103,7 +103,12 @@ class ProfileViewController: UIViewController {
         stackProfileButtonsView()
         
         view.addSubview(favoriteBrandsViewController.view)
+        view.addSubview(myLooksViewController.view)
         addChild(favoriteBrandsViewController)
+        addChild(myLooksViewController)
+        
+        favoriteBrandsViewController.view.isHidden = true
+        myLooksViewController.view.isHidden = true
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(42)
@@ -132,8 +137,15 @@ class ProfileViewController: UIViewController {
             $0.top.equalTo(myLooksButton.snp.bottom).offset(27)
         }
         
+        myLooksViewController.view.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview()
+            $0.top.equalTo(myLooksButton.snp.bottom).offset(27)
+        }
+        
         viewModel.loadData()
         favoriteBrandsViewController.favoriteBrands.append(contentsOf: viewModel.favoriteBrands)
+        myLooksViewController.myLooks.append(contentsOf: viewModel.myLooks)
     }
     
     func stackProfileButtonsView() {
@@ -159,14 +171,12 @@ class ProfileViewController: UIViewController {
     
     @objc
     private func didTapSettings() {
-//        let controller = LoginViewController()
-//        navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - Настройки профиля")
     }
     
     @objc
     private func didTapMyLooksButton() {
-
+        
         myLooksButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         myLooksButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         myLooksButton.setTitleColor( #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -174,7 +184,10 @@ class ProfileViewController: UIViewController {
         favoriteBrandsButton.backgroundColor = .clear
         favoriteBrandsButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         favoriteBrandsButton.setTitleColor( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-
+        
+        favoriteBrandsViewController.view.isHidden = true
+        myLooksViewController.view.isHidden = false
+        
         print("Кнопка - выбор Категории")
     }
     
@@ -188,6 +201,9 @@ class ProfileViewController: UIViewController {
         myLooksButton.backgroundColor = .clear
         myLooksButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         myLooksButton.setTitleColor( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        
+        favoriteBrandsViewController.view.isHidden = false
+        myLooksViewController.view.isHidden = true
         
         print("Кнопка - выбор Бренды")
     }

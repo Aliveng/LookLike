@@ -19,18 +19,19 @@ class FavoriteBrandsCell: UICollectionViewCell {
     
     lazy var brandLabel: UILabel = {
         let view = UILabel()
-        view.text = "sscschvjvbjmb"
+        view.text = "jhuu"
         view.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.font = .mainTitleAndPriceFont(size: 8, weight: .regular)
         view.layer.zPosition = 1
         return view
     }()
     
-    lazy var priceLabel: UILabel = {
+    lazy var price: UILabel = {
         let view = UILabel()
-        view.text = "45000"
+        view.text = ""
         view.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.font = .mainTitleAndPriceFont(size: 8, weight: .regular)
+        view.layer.zPosition = 1
         return view
     }()
     
@@ -58,7 +59,7 @@ class FavoriteBrandsCell: UICollectionViewCell {
         
         contentView.addSubview(image)
         contentView.addSubview(brandLabel)
-        contentView.addSubview(priceLabel)
+        contentView.addSubview(price)
         contentView.addSubview(goToStoreButton)
         
         image.snp.makeConstraints {
@@ -72,12 +73,12 @@ class FavoriteBrandsCell: UICollectionViewCell {
         
         brandLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(8)
-            $0.bottom.equalTo(goToStoreButton.snp.top).offset(-20)
+            $0.bottom.equalTo(goToStoreButton.snp.top).offset(-29)
         }
         
-        priceLabel.snp.makeConstraints {
+        price.snp.makeConstraints {
             $0.right.equalToSuperview().inset(8)
-            $0.bottom.equalTo(goToStoreButton.snp.top).offset(-20)
+            $0.bottom.equalTo(goToStoreButton.snp.top).offset(-29)
         }
     }
     
