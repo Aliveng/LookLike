@@ -29,6 +29,7 @@
 		0F43B11525FA113000C7A046 /* MyLooksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43B11425FA113000C7A046 /* MyLooksCell.swift */; };
 		0F43B11D25FA121F00C7A046 /* MyLooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43B11C25FA121F00C7A046 /* MyLooksViewController.swift */; };
 		0F4DBA1225F8B8AF00949236 /* Categories.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F4DBA1125F8B8AF00949236 /* Categories.xcassets */; };
+		0FA37C81260099610051DD54 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37C80260099610051DD54 /* Bookmark.swift */; };
 		0FCD369025F7593C00DCEFEF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */; };
 		0FCD369525F768C300DCEFEF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD369425F768C300DCEFEF /* CategoryCell.swift */; };
 		0FCD369E25F7E6E200DCEFEF /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD369D25F7E6E200DCEFEF /* BrandsViewController.swift */; };
@@ -96,6 +97,7 @@
 		0F43B11425FA113000C7A046 /* MyLooksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLooksCell.swift; sourceTree = "<group>"; };
 		0F43B11C25FA121F00C7A046 /* MyLooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLooksViewController.swift; sourceTree = "<group>"; };
 		0F4DBA1125F8B8AF00949236 /* Categories.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Categories.xcassets; sourceTree = "<group>"; };
+		0FA37C80260099610051DD54 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0FCD369425F768C300DCEFEF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0FCD369D25F7E6E200DCEFEF /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
@@ -222,10 +224,19 @@
 				0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */,
 				0F2BE3D725E78308005630AF /* RegisterViewController.swift */,
 				0FCD368A25F757B100DCEFEF /* Search */,
-				0F2BE3F025E7A346005630AF /* DiscoverViewController.swift */,
+				0FA37C7C260099470051DD54 /* Discover */,
 				0FDFDE9825F923290049AEB1 /* Profile */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		0FA37C7C260099470051DD54 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				0F2BE3F025E7A346005630AF /* DiscoverViewController.swift */,
+				0FA37C80260099610051DD54 /* Bookmark.swift */,
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 		0FCD368A25F757B100DCEFEF /* Search */ = {
@@ -613,6 +624,7 @@
 				0F43B11D25FA121F00C7A046 /* MyLooksViewController.swift in Sources */,
 				0F43B11525FA113000C7A046 /* MyLooksCell.swift in Sources */,
 				0FCD36A325F7E9D300DCEFEF /* CategoriesViewController.swift in Sources */,
+				0FA37C81260099610051DD54 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

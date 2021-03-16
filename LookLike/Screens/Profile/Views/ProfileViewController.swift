@@ -108,7 +108,7 @@ class ProfileViewController: UIViewController {
         addChild(myLooksViewController)
         
         favoriteBrandsViewController.view.isHidden = true
-        myLooksViewController.view.isHidden = true
+        myLooksViewController.view.isHidden = false
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(42)

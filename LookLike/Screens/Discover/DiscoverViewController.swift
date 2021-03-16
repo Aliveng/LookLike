@@ -20,14 +20,8 @@ class DiscoverViewController: UIViewController {
         return view
     }()
     
-    lazy var bookmarkButton : UIButton = {
-        let view = UIButton()
-        view.setImage(.bookmarkImg, for: .normal)
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        view.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        view.addTarget(self,
-                       action: #selector(didTapBookmark),
-                       for: .touchUpInside)
+    lazy var bookmarkButton : Bookmark = {
+        let view = Bookmark()
         return view
     }()
     
@@ -151,14 +145,6 @@ class DiscoverViewController: UIViewController {
             $0.right.equalTo(mannequinBackgroundImg.snp.right).inset(31)
             $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(16)
         }
-    }
-    
-    @objc
-    private func didTapBookmark() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
-        bookmarkButton.setImage(.bookmarkMakedImg, for: .normal)
-        print("Кнопка - Закладка")
     }
     
     @objc
