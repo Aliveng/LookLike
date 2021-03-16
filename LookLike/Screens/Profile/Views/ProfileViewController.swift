@@ -30,6 +30,7 @@ class ProfileViewController: UIViewController {
     
     lazy var avatarImg: UIImageView = {
         let view = UIImageView(image: .avatarImg)
+        view.contentMode = .scaleAspectFit
         view.layer.cornerRadius = 50
         view.clipsToBounds = true
         return view

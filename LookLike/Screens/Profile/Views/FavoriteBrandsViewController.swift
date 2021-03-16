@@ -54,7 +54,7 @@ extension FavoriteBrandsViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteBrandsCell", for: indexPath)
         (cell as? FavoriteBrandsCell)?.image.image = UIImage.init(named:favoriteBrands[indexPath.row].imageLink)
         (cell as? FavoriteBrandsCell)?.brandLabel.text = "\(favoriteBrands[indexPath.row].brand)"
-        (cell as? FavoriteBrandsCell)?.price.text = "\(favoriteBrands[indexPath.row].price)"
+        (cell as? FavoriteBrandsCell)?.priceLabel.text = "\(favoriteBrands[indexPath.row].price)"
         
         return cell
     }

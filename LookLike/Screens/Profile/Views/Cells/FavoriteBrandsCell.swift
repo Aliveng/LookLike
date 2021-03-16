@@ -14,20 +14,23 @@ class FavoriteBrandsCell: UICollectionViewCell {
     
     lazy var image: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
     lazy var brandLabel: UILabel = {
         let view = UILabel()
-        view.text = "jhuu"
+        view.setContentCompressionResistancePriority(.defaultLow, for: NSLayoutConstraint.Axis.horizontal)
+        view.text = ""
         view.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.font = .mainTitleAndPriceFont(size: 8, weight: .regular)
         view.layer.zPosition = 1
         return view
     }()
     
-    lazy var price: UILabel = {
+    lazy var priceLabel: UILabel = {
         let view = UILabel()
+      //  view.setContentCompressionResistancePriority(.defaultLow, for: NSLayoutConstraint.Axis.horizontal)
         view.text = ""
         view.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.font = .mainTitleAndPriceFont(size: 8, weight: .regular)
@@ -59,27 +62,40 @@ class FavoriteBrandsCell: UICollectionViewCell {
         
         contentView.addSubview(image)
         contentView.addSubview(brandLabel)
-        contentView.addSubview(price)
+        contentView.addSubview(priceLabel)
         contentView.addSubview(goToStoreButton)
         
-        image.snp.makeConstraints {
-            $0.center.equalToSuperview()
-        }
+        stackPriceAndBrandLabelsView()
         
         goToStoreButton.snp.makeConstraints {
+            $0.height.equalTo(32)
             $0.left.right.equalToSuperview().inset(18)
             $0.bottom.equalToSuperview().inset(20)
         }
         
-        brandLabel.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(8)
-            $0.bottom.equalTo(goToStoreButton.snp.top).offset(-29)
+        image.snp.makeConstraints {
+            $0.top.left.right.equalToSuperview().inset(16)
+            $0.bottom.equalTo(brandLabel.snp.top)
+        }
+    }
+    
+    func stackPriceAndBrandLabelsView() {
+        
+        let labelsStack = UIStackView(arrangedSubviews: [brandLabel, priceLabel])
+        labelsStack.backgroundColor = .clear
+        labelsStack.axis = .horizontal
+        labelsStack.distribution = .equalCentering
+        labelsStack.spacing = 25
+        addSubview(labelsStack)
+        
+        labelsStack.snp.makeConstraints {
+            $0.bottom.equalTo(goToStoreButton.snp.top).offset(-10)
+            $0.height.equalTo(14)
+            $0.left.right.equalToSuperview().inset(8)
         }
         
-        price.snp.makeConstraints {
-            $0.right.equalToSuperview().inset(8)
-            $0.bottom.equalTo(goToStoreButton.snp.top).offset(-29)
-        }
+        labelsStack.addSubview(brandLabel)
+        labelsStack.addSubview(priceLabel)
     }
     
     required init?(coder: NSCoder) {
