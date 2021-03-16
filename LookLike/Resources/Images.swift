@@ -33,4 +33,6 @@ extension UIImage {
     static let trousers = UIImage(imageLiteralResourceName: "trousers")
     static let skirt = UIImage(imageLiteralResourceName: "skirt")
     
+    static let pants = UIImage(imageLiteralResourceName: "Pants")
+    static let shoes2 = UIImage(imageLiteralResourceName: "Shoes2")
 }

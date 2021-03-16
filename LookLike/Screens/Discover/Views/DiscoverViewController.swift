@@ -28,6 +28,13 @@ class DiscoverViewController: UIViewController {
     lazy var mannequinBackgroundImg: UIImageView = {
         let view = UIImageView()
         view.image = .mannequinImg
+        view.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        view.layer.borderWidth = 1
+        return view
+    }()
+    
+    lazy var withClothesView: WithClothesView = {
+        let view = WithClothesView()
         return view
     }()
     
@@ -92,8 +99,9 @@ class DiscoverViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.setNavigationBarHidden(true, animated: true)
 
-        view.addSubview(bookmarkButton)
         view.addSubview(mannequinBackgroundImg)
+        view.addSubview(withClothesView)
+        view.addSubview(bookmarkButton)
         view.addSubview(titleLabel)
         view.addSubview(addHeadwearButton)
         view.addSubview(addTopClothesButton)
@@ -114,6 +122,12 @@ class DiscoverViewController: UIViewController {
         mannequinBackgroundImg.snp.makeConstraints {
             $0.centerY.equalToSuperview().offset(35)
             $0.centerX.equalToSuperview()
+        }
+        
+        withClothesView.snp.makeConstraints {
+            $0.center.equalTo(mannequinBackgroundImg)
+            $0.height.equalTo(mannequinBackgroundImg)
+            $0.width.equalTo(mannequinBackgroundImg)
         }
         
         addHeadwearButton.snp.makeConstraints {
