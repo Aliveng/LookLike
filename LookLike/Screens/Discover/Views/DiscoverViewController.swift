@@ -93,6 +93,17 @@ class DiscoverViewController: UIViewController {
         return view
     }()
     
+    var viewModel: DiscoverViewModel
+    
+    init(viewModel: DiscoverViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -159,6 +170,9 @@ class DiscoverViewController: UIViewController {
             $0.right.equalTo(mannequinBackgroundImg.snp.right).inset(31)
             $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(16)
         }
+        
+        viewModel.loadData()
+        withClothesView.discover.append(contentsOf: viewModel.discover)
     }
     
     @objc

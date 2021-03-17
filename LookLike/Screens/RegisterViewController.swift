@@ -134,7 +134,7 @@ class RegisterViewController: UIViewController {
     @objc
     private func didTapSignUpButton() {
         
-        let discoverViewController = DiscoverViewController()
+        let discoverViewController = DiscoverViewController(viewModel: DiscoverViewModel.init())
         discoverViewController.tabBarItem = UITabBarItem.init(title: "", image: .eyeImg, tag: 0)
         
         let searchViewController = SearchViewController(viewModel: SearchViewModel.init())

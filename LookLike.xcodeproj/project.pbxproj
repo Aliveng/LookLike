@@ -32,6 +32,8 @@
 		0FA37C81260099610051DD54 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37C80260099610051DD54 /* Bookmark.swift */; };
 		0FA37C862600A27D0051DD54 /* Discover.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA37C852600A27D0051DD54 /* Discover.xcassets */; };
 		0FA37C8E2600A9340051DD54 /* WithClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37C8D2600A9340051DD54 /* WithClothesView.swift */; };
+		0FA37C9B2601FE400051DD54 /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37C9A2601FE400051DD54 /* DiscoverModel.swift */; };
+		0FA37CA12601FF9B0051DD54 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37CA02601FF9B0051DD54 /* DiscoverViewModel.swift */; };
 		0FCD369025F7593C00DCEFEF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */; };
 		0FCD369525F768C300DCEFEF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD369425F768C300DCEFEF /* CategoryCell.swift */; };
 		0FCD369E25F7E6E200DCEFEF /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD369D25F7E6E200DCEFEF /* BrandsViewController.swift */; };
@@ -102,6 +104,8 @@
 		0FA37C80260099610051DD54 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		0FA37C852600A27D0051DD54 /* Discover.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Discover.xcassets; sourceTree = "<group>"; };
 		0FA37C8D2600A9340051DD54 /* WithClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithClothesView.swift; sourceTree = "<group>"; };
+		0FA37C9A2601FE400051DD54 /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
+		0FA37CA02601FF9B0051DD54 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0FCD369425F768C300DCEFEF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0FCD369D25F7E6E200DCEFEF /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			children = (
 				0FA37C962600B05E0051DD54 /* Model */,
 				0FA37C922600A9690051DD54 /* Views */,
+				0FA37C9F2601FF470051DD54 /* ViewModel */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -257,8 +262,17 @@
 		0FA37C962600B05E0051DD54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0FA37C9A2601FE400051DD54 /* DiscoverModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0FA37C9F2601FF470051DD54 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0FA37CA02601FF9B0051DD54 /* DiscoverViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0FCD368A25F757B100DCEFEF /* Search */ = {
@@ -638,12 +652,14 @@
 				0F3AE4F325E261690098536D /* LoggedOutViewController.swift in Sources */,
 				0F3AE53A25E276900098536D /* Images.swift in Sources */,
 				0FDFDE9E25F924420049AEB1 /* FavoriteBrandsViewController.swift in Sources */,
+				0FA37C9B2601FE400051DD54 /* DiscoverModel.swift in Sources */,
 				0F2BE3D825E78308005630AF /* RegisterViewController.swift in Sources */,
 				0F3EB8D925E68F2D00B1CCCA /* LoginViewController.swift in Sources */,
 				0FDFDEC325F929A90049AEB1 /* ProfileViewModel.swift in Sources */,
 				0FCD369E25F7E6E200DCEFEF /* BrandsViewController.swift in Sources */,
 				0FCD36B125F7EDF000DCEFEF /* CategoryModel.swift in Sources */,
 				0FCD36B625F7EED100DCEFEF /* BrandModel.swift in Sources */,
+				0FA37CA12601FF9B0051DD54 /* DiscoverViewModel.swift in Sources */,
 				0F3AE4EF25E261690098536D /* AppDelegate.swift in Sources */,
 				0F43B11D25FA121F00C7A046 /* MyLooksViewController.swift in Sources */,
 				0F43B11525FA113000C7A046 /* MyLooksCell.swift in Sources */,
