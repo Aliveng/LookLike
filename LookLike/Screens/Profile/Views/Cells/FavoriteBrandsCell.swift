@@ -20,21 +20,23 @@ class FavoriteBrandsCell: UICollectionViewCell {
     
     lazy var brandLabel: UILabel = {
         let view = UILabel()
-        view.setContentCompressionResistancePriority(.defaultLow, for: NSLayoutConstraint.Axis.horizontal)
+        view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         view.text = ""
         view.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.font = .mainTitleAndPriceFont(size: 8, weight: .regular)
         view.layer.zPosition = 1
+        view.numberOfLines = 1
         return view
     }()
     
     lazy var priceLabel: UILabel = {
         let view = UILabel()
-      //  view.setContentCompressionResistancePriority(.defaultLow, for: NSLayoutConstraint.Axis.horizontal)
+        view.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         view.text = ""
         view.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         view.font = .mainTitleAndPriceFont(size: 8, weight: .regular)
         view.layer.zPosition = 1
+        view.numberOfLines = 1
         return view
     }()
     
@@ -85,12 +87,12 @@ class FavoriteBrandsCell: UICollectionViewCell {
         labelsStack.backgroundColor = .clear
         labelsStack.axis = .horizontal
         labelsStack.distribution = .equalCentering
-        labelsStack.spacing = 25
+        labelsStack.spacing = 10
         addSubview(labelsStack)
         
         labelsStack.snp.makeConstraints {
             $0.bottom.equalTo(goToStoreButton.snp.top).offset(-10)
-            $0.height.equalTo(14)
+            $0.height.equalTo(24)
             $0.left.right.equalToSuperview().inset(8)
         }
         
