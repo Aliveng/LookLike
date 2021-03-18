@@ -28,8 +28,8 @@ class DiscoverViewController: UIViewController {
     lazy var mannequinBackgroundImg: UIImageView = {
         let view = UIImageView()
         view.image = .mannequinImg
-        view.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        view.layer.borderWidth = 1
+     //   view.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+    //    view.layer.borderWidth = 1
         return view
     }()
     
@@ -184,29 +184,21 @@ class DiscoverViewController: UIViewController {
     
     @objc
     private func didTapAddTopClothesButton() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - Добавить верх")
     }
     
     @objc
     private func didTapAddBottomClothesButton() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - Добавить низ")
     }
     
     @objc
     private func didTapAddBagButton() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - Добавить сумку")
     }
     
     @objc
     private func didTapAddShoesButton() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
         print("Кнопка - Добавить обувь")
     }
 }
