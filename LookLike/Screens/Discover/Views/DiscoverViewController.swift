@@ -91,7 +91,8 @@ class DiscoverViewController: UIViewController {
         return view
     }()
     
-   var viewModel: DiscoverViewModel
+    var viewModel: DiscoverViewModel
+    var searchViewController: SearchViewController = SearchViewController(viewModel: SearchViewModel.init())
     
     init(viewModel: DiscoverViewModel) {
         self.viewModel = viewModel
@@ -118,6 +119,11 @@ class DiscoverViewController: UIViewController {
         view.addSubview(addBagButton)
         view.addSubview(addShoesButton)
         
+        view.addSubview(searchViewController.view)
+        addChild(searchViewController)
+        
+        searchViewController.view.isHidden = true
+
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
@@ -168,33 +174,47 @@ class DiscoverViewController: UIViewController {
             $0.right.equalTo(mannequinBackgroundImg.snp.right).inset(31)
             $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(16)
         }
+        
+        searchViewController.view.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.top.equalToSuperview()
+        }
 
     }
     
     @objc
     private func didTapAddHeadwearButton() {
-        //        let controller = LoginViewController()
-        //        navigationController?.pushViewController(controller, animated: true)
+        
+        searchViewController.view.isHidden = false
         print("Кнопка - Добавить голоной убор")
     }
     
     @objc
     private func didTapAddTopClothesButton() {
+        
+        searchViewController.view.isHidden = false
         print("Кнопка - Добавить верх")
     }
     
     @objc
     private func didTapAddBottomClothesButton() {
+        
+        searchViewController.view.isHidden = false
         print("Кнопка - Добавить низ")
     }
     
     @objc
     private func didTapAddBagButton() {
+        
+        searchViewController.view.isHidden = false
         print("Кнопка - Добавить сумку")
     }
     
     @objc
     private func didTapAddShoesButton() {
+        
+        searchViewController.view.isHidden = false
         print("Кнопка - Добавить обувь")
     }
 }
