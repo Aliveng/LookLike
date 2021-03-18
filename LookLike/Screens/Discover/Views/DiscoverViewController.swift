@@ -92,7 +92,6 @@ class DiscoverViewController: UIViewController {
     }()
     
    var viewModel: DiscoverViewModel
-//    var discoverSearchViewController: DiscoverSearchViewController = DiscoverSearchViewController(viewModel: DiscoverSearchViewModel)
     
     init(viewModel: DiscoverViewModel) {
         self.viewModel = viewModel
@@ -118,8 +117,6 @@ class DiscoverViewController: UIViewController {
         view.addSubview(addBottomClothesButton)
         view.addSubview(addBagButton)
         view.addSubview(addShoesButton)
-        
-//        view.addSubview(discoverSearchViewController.view)
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -171,9 +168,7 @@ class DiscoverViewController: UIViewController {
             $0.right.equalTo(mannequinBackgroundImg.snp.right).inset(31)
             $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(16)
         }
-        
-//        viewModel.loadData()
-//        withClothesView.discover.append(contentsOf: viewModel.discover)
+
     }
     
     @objc
@@ -185,7 +180,6 @@ class DiscoverViewController: UIViewController {
     
     @objc
     private func didTapAddTopClothesButton() {
-     // let controller = SearchViewController(viewModel: SearchViewModel)
         print("Кнопка - Добавить верх")
     }
     
