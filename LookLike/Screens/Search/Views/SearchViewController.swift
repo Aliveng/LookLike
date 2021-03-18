@@ -85,6 +85,7 @@ class SearchViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(searchTextField)
         
+        addTapGestureToHideKeyboard()
         stackSearchButtonsView()
         
         view.addSubview(brandsViewController.view)
@@ -122,6 +123,11 @@ class SearchViewController: UIViewController {
         brandsViewController.brands.append(contentsOf: viewModel.brands)
         categoriesViewController.categories.append(contentsOf: viewModel.categories)
         
+    }
+    
+    func addTapGestureToHideKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+        view.addGestureRecognizer(tapGesture)
     }
     
     func stackSearchButtonsView() {
