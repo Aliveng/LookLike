@@ -28,8 +28,6 @@ class DiscoverViewController: UIViewController {
     lazy var mannequinBackgroundImg: UIImageView = {
         let view = UIImageView()
         view.image = .mannequinImg
-     //   view.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-    //    view.layer.borderWidth = 1
         return view
     }()
     
@@ -93,7 +91,8 @@ class DiscoverViewController: UIViewController {
         return view
     }()
     
-    var viewModel: DiscoverViewModel
+   var viewModel: DiscoverViewModel
+//    var discoverSearchViewController: DiscoverSearchViewController = DiscoverSearchViewController(viewModel: DiscoverSearchViewModel)
     
     init(viewModel: DiscoverViewModel) {
         self.viewModel = viewModel
@@ -119,6 +118,8 @@ class DiscoverViewController: UIViewController {
         view.addSubview(addBottomClothesButton)
         view.addSubview(addBagButton)
         view.addSubview(addShoesButton)
+        
+//        view.addSubview(discoverSearchViewController.view)
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -171,8 +172,8 @@ class DiscoverViewController: UIViewController {
             $0.bottom.equalTo(mannequinBackgroundImg.snp.bottom).inset(16)
         }
         
-        viewModel.loadData()
-        withClothesView.discover.append(contentsOf: viewModel.discover)
+//        viewModel.loadData()
+//        withClothesView.discover.append(contentsOf: viewModel.discover)
     }
     
     @objc
@@ -184,6 +185,7 @@ class DiscoverViewController: UIViewController {
     
     @objc
     private func didTapAddTopClothesButton() {
+     // let controller = SearchViewController(viewModel: SearchViewModel)
         print("Кнопка - Добавить верх")
     }
     

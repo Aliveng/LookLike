@@ -34,6 +34,7 @@
 		0FA37C8E2600A9340051DD54 /* WithClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37C8D2600A9340051DD54 /* WithClothesView.swift */; };
 		0FA37C9B2601FE400051DD54 /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37C9A2601FE400051DD54 /* DiscoverModel.swift */; };
 		0FA37CA12601FF9B0051DD54 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37CA02601FF9B0051DD54 /* DiscoverViewModel.swift */; };
+		0FA37CA626032E500051DD54 /* DiscoverSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA37CA526032E500051DD54 /* DiscoverSearchViewController.swift */; };
 		0FCD369025F7593C00DCEFEF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */; };
 		0FCD369525F768C300DCEFEF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD369425F768C300DCEFEF /* CategoryCell.swift */; };
 		0FCD369E25F7E6E200DCEFEF /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD369D25F7E6E200DCEFEF /* BrandsViewController.swift */; };
@@ -47,6 +48,11 @@
 		0FDFDEBD25F9270F0049AEB1 /* FavoriteBrandsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDEBC25F9270F0049AEB1 /* FavoriteBrandsCell.swift */; };
 		0FDFDEC325F929A90049AEB1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDEC225F929A90049AEB1 /* ProfileViewModel.swift */; };
 		0FDFDEC825F92B060049AEB1 /* FavoriteBrands.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFDEC725F92B060049AEB1 /* FavoriteBrands.xcassets */; };
+		0FE39062260337BD00DA8BAE /* DiscoverSearchCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE39061260337BD00DA8BAE /* DiscoverSearchCategoryModel.swift */; };
+		0FE39067260337E300DA8BAE /* DiscoverSearchBrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE39066260337E300DA8BAE /* DiscoverSearchBrandModel.swift */; };
+		0FE3906F26033BD100DA8BAE /* DiscoverSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3906E26033BD100DA8BAE /* DiscoverSearchViewModel.swift */; };
+		0FE39074260343EE00DA8BAE /* BrandsDiscoverSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE39073260343EE00DA8BAE /* BrandsDiscoverSearchViewController.swift */; };
+		0FE3907C2603452E00DA8BAE /* CategoriesDiscoverSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3907B2603452E00DA8BAE /* CategoriesDiscoverSearchViewController.swift */; };
 		47506C0C8ED3F577142A686C /* Pods_LookLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959B9D447CB34B3BF11826B8 /* Pods_LookLikeTests.framework */; };
 		B57CD7FAAB0A2B2BF96FFA6C /* Pods_LookLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A48FB97F84F1804B279BB1 /* Pods_LookLike.framework */; };
 		E34DA16936CF15AE8911B6CA /* Pods_LookLike_LookLikeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D65655EB8626AC1563ED19 /* Pods_LookLike_LookLikeUITests.framework */; };
@@ -106,6 +112,7 @@
 		0FA37C8D2600A9340051DD54 /* WithClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithClothesView.swift; sourceTree = "<group>"; };
 		0FA37C9A2601FE400051DD54 /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
 		0FA37CA02601FF9B0051DD54 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
+		0FA37CA526032E500051DD54 /* DiscoverSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSearchViewController.swift; sourceTree = "<group>"; };
 		0FCD368F25F7593C00DCEFEF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0FCD369425F768C300DCEFEF /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0FCD369D25F7E6E200DCEFEF /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +126,11 @@
 		0FDFDEBC25F9270F0049AEB1 /* FavoriteBrandsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBrandsCell.swift; sourceTree = "<group>"; };
 		0FDFDEC225F929A90049AEB1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0FDFDEC725F92B060049AEB1 /* FavoriteBrands.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FavoriteBrands.xcassets; sourceTree = "<group>"; };
+		0FE39061260337BD00DA8BAE /* DiscoverSearchCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSearchCategoryModel.swift; sourceTree = "<group>"; };
+		0FE39066260337E300DA8BAE /* DiscoverSearchBrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSearchBrandModel.swift; sourceTree = "<group>"; };
+		0FE3906E26033BD100DA8BAE /* DiscoverSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSearchViewModel.swift; sourceTree = "<group>"; };
+		0FE39073260343EE00DA8BAE /* BrandsDiscoverSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsDiscoverSearchViewController.swift; sourceTree = "<group>"; };
+		0FE3907B2603452E00DA8BAE /* CategoriesDiscoverSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDiscoverSearchViewController.swift; sourceTree = "<group>"; };
 		15A48FB97F84F1804B279BB1 /* Pods_LookLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LookLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E453B3FF2D81C836F0F41 /* Pods-LookLike-LookLikeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookLike-LookLikeUITests.release.xcconfig"; path = "Target Support Files/Pods-LookLike-LookLikeUITests/Pods-LookLike-LookLikeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4DC740D6C602BE069FFC74B4 /* Pods-LookLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookLike.debug.xcconfig"; path = "Target Support Files/Pods-LookLike/Pods-LookLike.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +265,9 @@
 			isa = PBXGroup;
 			children = (
 				0F2BE3F025E7A346005630AF /* DiscoverViewController.swift */,
+				0FA37CA526032E500051DD54 /* DiscoverSearchViewController.swift */,
+				0FE3907B2603452E00DA8BAE /* CategoriesDiscoverSearchViewController.swift */,
+				0FE39073260343EE00DA8BAE /* BrandsDiscoverSearchViewController.swift */,
 				0FA37C8D2600A9340051DD54 /* WithClothesView.swift */,
 				0FA37C80260099610051DD54 /* Bookmark.swift */,
 			);
@@ -263,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				0FA37C9A2601FE400051DD54 /* DiscoverModel.swift */,
+				0FE39061260337BD00DA8BAE /* DiscoverSearchCategoryModel.swift */,
+				0FE39066260337E300DA8BAE /* DiscoverSearchBrandModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				0FA37CA02601FF9B0051DD54 /* DiscoverViewModel.swift */,
+				0FE3906E26033BD100DA8BAE /* DiscoverSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -640,8 +658,10 @@
 			files = (
 				0FCD369025F7593C00DCEFEF /* SearchViewModel.swift in Sources */,
 				0FCD36BC25F7F07A00DCEFEF /* BrandCell.swift in Sources */,
+				0FE39062260337BD00DA8BAE /* DiscoverSearchCategoryModel.swift in Sources */,
 				0F2BE3F125E7A346005630AF /* DiscoverViewController.swift in Sources */,
 				0F43B10B25FA0C6100C7A046 /* MyLooksModel.swift in Sources */,
+				0FE39074260343EE00DA8BAE /* BrandsDiscoverSearchViewController.swift in Sources */,
 				0FDFDEA425F925710049AEB1 /* FavoriteBrandsModel.swift in Sources */,
 				0F3AE53925E276900098536D /* Fonts.swift in Sources */,
 				0FCD369525F768C300DCEFEF /* CategoryCell.swift in Sources */,
@@ -651,6 +671,7 @@
 				0F2BE3DD25E7871F005630AF /* SearchViewController.swift in Sources */,
 				0F3AE4F325E261690098536D /* LoggedOutViewController.swift in Sources */,
 				0F3AE53A25E276900098536D /* Images.swift in Sources */,
+				0FE39067260337E300DA8BAE /* DiscoverSearchBrandModel.swift in Sources */,
 				0FDFDE9E25F924420049AEB1 /* FavoriteBrandsViewController.swift in Sources */,
 				0FA37C9B2601FE400051DD54 /* DiscoverModel.swift in Sources */,
 				0F2BE3D825E78308005630AF /* RegisterViewController.swift in Sources */,
@@ -658,12 +679,15 @@
 				0FDFDEC325F929A90049AEB1 /* ProfileViewModel.swift in Sources */,
 				0FCD369E25F7E6E200DCEFEF /* BrandsViewController.swift in Sources */,
 				0FCD36B125F7EDF000DCEFEF /* CategoryModel.swift in Sources */,
+				0FA37CA626032E500051DD54 /* DiscoverSearchViewController.swift in Sources */,
 				0FCD36B625F7EED100DCEFEF /* BrandModel.swift in Sources */,
 				0FA37CA12601FF9B0051DD54 /* DiscoverViewModel.swift in Sources */,
 				0F3AE4EF25E261690098536D /* AppDelegate.swift in Sources */,
 				0F43B11D25FA121F00C7A046 /* MyLooksViewController.swift in Sources */,
 				0F43B11525FA113000C7A046 /* MyLooksCell.swift in Sources */,
 				0FCD36A325F7E9D300DCEFEF /* CategoriesViewController.swift in Sources */,
+				0FE3906F26033BD100DA8BAE /* DiscoverSearchViewModel.swift in Sources */,
+				0FE3907C2603452E00DA8BAE /* CategoriesDiscoverSearchViewController.swift in Sources */,
 				0FA37C81260099610051DD54 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

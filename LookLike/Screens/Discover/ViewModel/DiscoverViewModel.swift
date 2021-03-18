@@ -23,5 +23,6 @@ class DiscoverViewModel {
                           shoesImgLink: "Shoes2")
             
         ]
+        
     }
 }

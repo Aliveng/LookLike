@@ -5,6 +5,9 @@
 //  Created by Татьяна Севостьянова on 17.03.2021.
 //
 
+
+import UIKit
+
 struct DiscoverModel {
     
     let headwearImgLink: String
