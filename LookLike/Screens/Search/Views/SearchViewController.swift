@@ -123,7 +123,7 @@ class SearchViewController: UIViewController {
     }
     
     func addTapGestureToHideKeyboard() {
-        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(searchTextField.endEditing))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
