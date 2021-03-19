@@ -78,10 +78,7 @@ class SearchViewController: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self.view,
-//                                                         action: #selector(UIView.endEditing)))
-    
+
         view.addSubview(titleLabel)
         view.addSubview(searchTextField)
         
@@ -127,6 +124,7 @@ class SearchViewController: UIViewController {
     
     func addTapGestureToHideKeyboard() {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
     
