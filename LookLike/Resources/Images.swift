@@ -20,7 +20,7 @@ extension UIImage {
     static let bookmarkMakedImg = UIImage(imageLiteralResourceName: "bookmarkMaked")
     static let plusImg = UIImage(imageLiteralResourceName: "plus")
     
-    static let avatarImg = UIImage(imageLiteralResourceName: "angeli")
+    static let avatarImg = UIImage(imageLiteralResourceName: "joly")
     static let gearWheelImg = UIImage(imageLiteralResourceName: "brightness_low")
     
     static let blazer = UIImage(imageLiteralResourceName: "blazer")
