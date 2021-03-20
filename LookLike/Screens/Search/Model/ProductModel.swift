@@ -7,9 +7,12 @@
 
 import UIKit
 
-struct RequestModel {
+struct ProductModel {
     
-    let position: String
+    let category: CategoryModel
+    let brand: BrandModel
     let imageLink: String
+    let name: String
+    let price: Decimal
     
 }

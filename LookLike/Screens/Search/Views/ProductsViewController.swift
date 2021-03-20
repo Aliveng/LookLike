@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class RequestViewController: UIViewController {
+class ProductsViewController: UIViewController {
     
     lazy var collectionView: UICollectionView = {
 
@@ -19,14 +19,14 @@ class RequestViewController: UIViewController {
 
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
-        view.register(RequestCell.self, forCellWithReuseIdentifier: "RequestCell")
+        view.register(ProductCell.self, forCellWithReuseIdentifier: "ProductCell")
         view.showsVerticalScrollIndicator = false
         view.dataSource = self
         view.delegate = self
         return view
     }()
     
-    var requests: [RequestModel] = []
+    var products: [ProductModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,21 +43,20 @@ class RequestViewController: UIViewController {
     }
 }
 
-extension RequestViewController: UICollectionViewDataSource {
+extension ProductsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return requests.count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RequestCell", for: indexPath)
-        (cell as? RequestCell)?.image.image = UIImage.init(named: requests[indexPath.row].imageLink)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath)
+        (cell as? ProductCell)?.image.image = UIImage.init(named: products[indexPath.row].imageLink)
         return cell
     }
 }
 
-extension RequestViewController: UICollectionViewDelegate {
+extension ProductsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Выбрана ячейка с номером \(indexPath.row)")
     }

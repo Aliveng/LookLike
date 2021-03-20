@@ -12,7 +12,7 @@ class SearchViewModel {
     var title = ""
     var categories: [CategoryModel] = []
     var brands: [BrandModel] = []
-    var requests: [RequestModel] = []
+    var products: [ProductModel] = []
     
     func loadData() {
         
@@ -41,19 +41,67 @@ class SearchViewModel {
             .init(imageLink: "hm")
         ]
         
-        requests = [
-            RequestModel(position: "TopClothes", imageLink: "coat1"),
-            RequestModel(position: "TopClothes", imageLink: "coat2"),
-            RequestModel(position: "TopClothes", imageLink: "coat3"),
-            RequestModel(position: "TopClothes", imageLink: "coat4"),
-            RequestModel(position: "TopClothes", imageLink: "coat5"),
-            RequestModel(position: "TopClothes", imageLink: "coat6"),
-            RequestModel(position: "TopClothes", imageLink: "coat7"),
-            RequestModel(position: "TopClothes", imageLink: "coat8"),
-            RequestModel(position: "TopClothes", imageLink: "coat9"),
-            RequestModel(position: "TopClothes", imageLink: "coat10"),
-            RequestModel(position: "TopClothes", imageLink: "coat11"),
-            RequestModel(position: "TopClothes", imageLink: "coat12")
+        products = [
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat1",
+                  name: "",
+                  price: 1),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat2",
+                  name: "",
+                  price: 2),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat3",
+                  name: "",
+                  price: 3),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat4",
+                  name: "",
+                  price: 4),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat5",
+                  name: "",
+                  price: 5),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat6",
+                  name: "",
+                  price: 6),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat7",
+                  name: "",
+                  price: 7),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat8",
+                  name: "",
+                  price: 8),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat9",
+                  name: "",
+                  price: 9),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat10",
+                  name: "",
+                  price: 10),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat11",
+                  name: "",
+                  price: 11),
+            .init(category: CategoryModel(position: "", image: .blazer, name: ""),
+                  brand: BrandModel(imageLink: ""),
+                  imageLink: "coat12",
+                  name: "",
+                  price: 12)
         ]
     }
 }

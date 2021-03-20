@@ -63,7 +63,7 @@ class SearchViewController: UIViewController {
     var viewModel: SearchViewModel
     var brandsViewController: BrandsViewController = BrandsViewController()
     var categoriesViewController: CategoriesViewController = CategoriesViewController()
-    var requestViewController: RequestViewController = RequestViewController()
+    var productsViewController: ProductsViewController = ProductsViewController()
 
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
@@ -88,14 +88,14 @@ class SearchViewController: UIViewController {
         
         view.addSubview(brandsViewController.view)
         view.addSubview(categoriesViewController.view)
-        view.addSubview(requestViewController.view)
+        view.addSubview(productsViewController.view)
         addChild(brandsViewController)
         addChild(categoriesViewController)
-        addChild(requestViewController)
+        addChild(productsViewController)
         
         categoriesViewController.view.isHidden = true
         brandsViewController.view.isHidden = true
-        requestViewController.view.isHidden = false
+        productsViewController.view.isHidden = false
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -120,7 +120,7 @@ class SearchViewController: UIViewController {
             $0.top.equalTo(categoriesButton.snp.bottom).offset(37)
         }
         
-        requestViewController.view.snp.makeConstraints {
+        productsViewController.view.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(15)
             $0.bottom.equalToSuperview()
             $0.top.equalTo(categoriesButton.snp.bottom).offset(37)
@@ -129,7 +129,7 @@ class SearchViewController: UIViewController {
         viewModel.loadData()
         brandsViewController.brands.append(contentsOf: viewModel.brands)
         categoriesViewController.categories.append(contentsOf: viewModel.categories)
-        requestViewController.requests.append(contentsOf: viewModel.requests)
+        productsViewController.products.append(contentsOf: viewModel.products)
         
     }
     
@@ -173,7 +173,7 @@ class SearchViewController: UIViewController {
         
         categoriesViewController.view.isHidden = false
         brandsViewController.view.isHidden = true
-        requestViewController.view.isHidden = true
+        productsViewController.view.isHidden = true
         print("Кнопка - выбор Категории")
     }
     
@@ -190,7 +190,7 @@ class SearchViewController: UIViewController {
         
         categoriesViewController.view.isHidden = true
         brandsViewController.view.isHidden = false
-        requestViewController.view.isHidden = true
+        productsViewController.view.isHidden = true
         print("Кнопка - выбор Бренды")
     }
 }
