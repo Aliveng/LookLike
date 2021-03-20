@@ -63,6 +63,7 @@ class SearchViewController: UIViewController {
     var viewModel: SearchViewModel
     var brandsViewController: BrandsViewController = BrandsViewController()
     var categoriesViewController: CategoriesViewController = CategoriesViewController()
+    var requestViewController: RequestViewController = RequestViewController()
 
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
@@ -87,11 +88,14 @@ class SearchViewController: UIViewController {
         
         view.addSubview(brandsViewController.view)
         view.addSubview(categoriesViewController.view)
+        view.addSubview(requestViewController.view)
         addChild(brandsViewController)
         addChild(categoriesViewController)
+        addChild(requestViewController)
         
         categoriesViewController.view.isHidden = true
         brandsViewController.view.isHidden = true
+        requestViewController.view.isHidden = false
         
         titleLabel.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
@@ -116,9 +120,16 @@ class SearchViewController: UIViewController {
             $0.top.equalTo(categoriesButton.snp.bottom).offset(37)
         }
         
+        requestViewController.view.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview()
+            $0.top.equalTo(categoriesButton.snp.bottom).offset(37)
+        }
+        
         viewModel.loadData()
         brandsViewController.brands.append(contentsOf: viewModel.brands)
         categoriesViewController.categories.append(contentsOf: viewModel.categories)
+        requestViewController.requests.append(contentsOf: viewModel.requests)
         
     }
     
@@ -162,6 +173,7 @@ class SearchViewController: UIViewController {
         
         categoriesViewController.view.isHidden = false
         brandsViewController.view.isHidden = true
+        requestViewController.view.isHidden = true
         print("Кнопка - выбор Категории")
     }
     
@@ -178,6 +190,7 @@ class SearchViewController: UIViewController {
         
         categoriesViewController.view.isHidden = true
         brandsViewController.view.isHidden = false
+        requestViewController.view.isHidden = true
         print("Кнопка - выбор Бренды")
     }
 }

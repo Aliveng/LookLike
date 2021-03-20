@@ -12,11 +12,11 @@ class SearchViewModel {
     var title = ""
     var categories: [CategoryModel] = []
     var brands: [BrandModel] = []
+    var requests: [RequestModel] = []
     
     func loadData() {
         
         categories = [
-            
             CategoryModel(position: "TopClothes", image: .blazer, name: "Жакет"),
             CategoryModel(position: "TopClothes", image: .jacket, name: "Куртка"),
             CategoryModel(position: "TopClothes", image: .tshirt, name: "Футболка"),
@@ -27,7 +27,6 @@ class SearchViewModel {
             CategoryModel(position: "BottomClothes", image: .jeans, name: "Джинсы"),
             CategoryModel(position: "BottomClothes", image: .trousers, name: "Брюки"),
             CategoryModel(position: "BottomClothes", image: .skirt, name: "Юбка")
-            
         ]
         
         brands = [
@@ -40,6 +39,21 @@ class SearchViewModel {
             .init(imageLink: "tommy"),
             .init(imageLink: "gucci"),
             .init(imageLink: "hm")
+        ]
+        
+        requests = [
+            RequestModel(position: "TopClothes", imageLink: "coat1"),
+            RequestModel(position: "TopClothes", imageLink: "coat2"),
+            RequestModel(position: "TopClothes", imageLink: "coat3"),
+            RequestModel(position: "TopClothes", imageLink: "coat4"),
+            RequestModel(position: "TopClothes", imageLink: "coat5"),
+            RequestModel(position: "TopClothes", imageLink: "coat6"),
+            RequestModel(position: "TopClothes", imageLink: "coat7"),
+            RequestModel(position: "TopClothes", imageLink: "coat8"),
+            RequestModel(position: "TopClothes", imageLink: "coat9"),
+            RequestModel(position: "TopClothes", imageLink: "coat10"),
+            RequestModel(position: "TopClothes", imageLink: "coat11"),
+            RequestModel(position: "TopClothes", imageLink: "coat12")
         ]
     }
 }
