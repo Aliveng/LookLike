@@ -23,10 +23,23 @@ class SearchViewModel {
             CategoryModel(position: "TopClothes", image: .shirt, name: "Рубашка"),
             CategoryModel(position: "TopClothes", image: .coat, name: "Пальто"),
             CategoryModel(position: "TopClothes", image: .raincoat, name: "Плащ"),
-            
+
             CategoryModel(position: "BottomClothes", image: .jeans, name: "Джинсы"),
             CategoryModel(position: "BottomClothes", image: .trousers, name: "Брюки"),
             CategoryModel(position: "BottomClothes", image: .skirt, name: "Юбка")
+            
+//            CategoryModel(position: "TopClothes", image: .blazer6, name: "Жакет"),
+//            CategoryModel(position: "TopClothes", image: .jacket5, name: "Куртка"),
+//            CategoryModel(position: "TopClothes", image: .blouse7, name: "Блузка"),
+//            CategoryModel(position: "TopClothes", image: .dress2, name: "Платье"),
+//            CategoryModel(position: "TopClothes", image: .coat1, name: "Пальто"),
+//            CategoryModel(position: "TopClothes", image: .raincoat3, name: "Плащ"),
+//
+//            CategoryModel(position: "BottomClothes", image: .jeans9, name: "Джинсы"),
+//            CategoryModel(position: "BottomClothes", image: .skirt8, name: "Юбка"),
+//
+//            CategoryModel(position: "Bag", image: .bag, name: "Сумка")
+            
         ]
         
         brands = [

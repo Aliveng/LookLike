@@ -16,10 +16,16 @@ class DiscoverViewModel {
         
         discover = [
             
+//            DiscoverModel(headwearImgLink: "",
+//                          topClothesImgLink: "jacketNoBackground",
+//                          bottomClothesImgLink: "Pants",
+//                          bagImgLink: "",
+//                          shoesImgLink: "Shoes2")
+            
             DiscoverModel(headwearImgLink: "",
-                          topClothesImgLink: "jacketNoBackground",
-                          bottomClothesImgLink: "Pants",
-                          bagImgLink: "",
+                          topClothesImgLink: "2",
+                          bottomClothesImgLink: "",
+                          bagImgLink: "bag",
                           shoesImgLink: "Shoes2")
             
         ]

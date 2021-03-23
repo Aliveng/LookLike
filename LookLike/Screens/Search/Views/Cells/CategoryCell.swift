@@ -14,6 +14,8 @@ class CategoryCell: UICollectionViewCell {
     
     lazy var image: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        view.backgroundColor = #colorLiteral(red: 0.9253895879, green: 0.9255481362, blue: 0.9253795743, alpha: 1)
         return view
     }()
     

@@ -19,8 +19,10 @@ class WithClothesView: UIView {
     
     lazy var topClothesImgView: UIImageView = {
         let view = UIImageView()
-        view.image = .jacketNoBackground
+        view.image = .blouse47
         view.contentMode = .scaleAspectFit
+    //    view.layer.borderWidth = 1
+    //    view.layer.borderColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         return view
@@ -28,9 +30,10 @@ class WithClothesView: UIView {
     
     lazy var bottomClothesImgView: UIImageView = {
         let view = UIImageView()
-        
-        view.image = .pants
-        view.contentMode = .scaleAspectFit
+        view.image = .jeans29
+       view.contentMode = .scaleAspectFit
+   //     view.layer.borderWidth = 1
+   //     view.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         return view
@@ -38,7 +41,9 @@ class WithClothesView: UIView {
     
     lazy var bagImgView: UIImageView = {
         let view = UIImageView()
+        view.image = .bag
         view.contentMode = .scaleAspectFit
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         return view
     }()
@@ -63,7 +68,6 @@ class WithClothesView: UIView {
         addSubview(bagImgView)
         addSubview(shoesImgView)
         
-        // занимает один квадрат (92)
         headwearImgView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.height.equalTo(92)
@@ -71,23 +75,20 @@ class WithClothesView: UIView {
             $0.centerX.equalToSuperview().offset(-10)
         }
         
-        // занимает два квадрата (184), немного заходит на шею
         topClothesImgView.snp.makeConstraints {
             $0.top.equalTo(headwearImgView.snp.bottom).offset(-10)
-            $0.height.equalTo(184)
-            $0.width.equalTo(240)
+            $0.height.equalTo(119)
+            $0.width.equalTo(138)
             $0.centerX.equalToSuperview().offset(-14)
         }
         
-        // занимает три квадрата (276), заходит на один под topClothesImgView
         bottomClothesImgView.snp.makeConstraints {
             $0.bottom.equalTo(shoesImgView.snp.top)
-            $0.height.equalTo(276)
-            $0.width.equalTo(132) // величина из дизайна, чтоб хоть как-то смотрелось
-            $0.centerX.equalToSuperview().offset(-10)
+            $0.height.equalTo(278)
+            $0.width.equalTo(121)
+            $0.centerX.equalToSuperview().offset(-16)
         }
         
-        // занимает один квадрат (92)
         bagImgView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(330)
             $0.height.equalTo(92)
@@ -95,7 +96,6 @@ class WithClothesView: UIView {
             $0.left.equalTo(bottomClothesImgView.snp.right)
         }
         
-        // занимает один квадрат (92)
         shoesImgView.snp.makeConstraints {
             $0.bottom.equalToSuperview()
             $0.height.equalTo(92)
