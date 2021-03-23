@@ -32,12 +32,17 @@ class WithClothesView: UIView {
         return view
     }()
     
-
+    let step:Float = 10
     
-    lazy var customSlider: CustomSlider = {
-        let view = CustomSlider()
+    lazy var slider: UISlider = {
+        let view = UISlider()
         view.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        view.layer.borderWidth = 1
+        view.layer.borderWidth = 0.5
+        view.minimumValue = 0
+        view.maximumValue = 100
+        view.isContinuous = true
+        view.tintColor = #colorLiteral(red: 0.1621871024, green: 0.1865742252, blue: 0.3998256645, alpha: 1)
+        view.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
         return view
     }()
     
@@ -80,12 +85,12 @@ class WithClothesView: UIView {
         addSubview(topClothesImgView)
         addSubview(bagImgView)
         addSubview(shoesImgView)
-        addSubview(customSlider)
+        addSubview(slider)
         
-        customSlider.isHidden = true
+        slider.isHidden = true
         
-        
-        customSlider.snp.makeConstraints {
+ 
+       slider.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-60)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(42)
@@ -132,9 +137,23 @@ class WithClothesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func sliderValueDidChange(_ sender:UISlider!)
+    {
+//        print("Slider value changed")
+//
+//        // Use this code below only if you want UISlider to snap to values step by step
+//        let roundedStepValue = round(sender.value / step) * step
+//        sender.value = roundedStepValue
+//
+//        print("Slider step value \(Int(roundedStepValue))")
+        
+        print(sender.value)
+    }
+    
     @objc func touchTapped(_ sender: UITapGestureRecognizer) {
         
-        customSlider.isHidden = false
+     //   customSlider.isHidden = false
+        slider.isHidden = false
         print("Отобразить слайдер")
         
     }

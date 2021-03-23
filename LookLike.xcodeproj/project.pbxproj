@@ -26,7 +26,6 @@
 		0F3AE55325E4E3320098536D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE55225E4E3320098536D /* Roboto-Regular.ttf */; };
 		0F3AE55825E4ECCE0098536D /* ofont.ru_Corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AE55725E4ECCE0098536D /* ofont.ru_Corbel.ttf */; };
 		0F3EB8D925E68F2D00B1CCCA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */; };
-		0F40799D2609ED880032BF85 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F40799C2609ED880032BF85 /* CustomSlider.swift */; };
 		0F40DF6825ECC95B00AF9A72 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F40DF6725ECC95B00AF9A72 /* ProfileViewController.swift */; };
 		0F43B10B25FA0C6100C7A046 /* MyLooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43B10A25FA0C6100C7A046 /* MyLooksModel.swift */; };
 		0F43B11025FA105000C7A046 /* MyLooks.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F43B10F25FA105000C7A046 /* MyLooks.xcassets */; };
@@ -103,7 +102,6 @@
 		0F3AE55225E4E3320098536D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		0F3AE55725E4ECCE0098536D /* ofont.ru_Corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ofont.ru_Corbel.ttf; sourceTree = "<group>"; };
 		0F3EB8D825E68F2D00B1CCCA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		0F40799C2609ED880032BF85 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		0F40DF6725ECC95B00AF9A72 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0F43B10A25FA0C6100C7A046 /* MyLooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLooksModel.swift; sourceTree = "<group>"; };
 		0F43B10F25FA105000C7A046 /* MyLooks.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MyLooks.xcassets; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			children = (
 				0F2BE3F025E7A346005630AF /* DiscoverViewController.swift */,
 				0FA37C8D2600A9340051DD54 /* WithClothesView.swift */,
-				0F40799C2609ED880032BF85 /* CustomSlider.swift */,
 				0FA37C80260099610051DD54 /* Bookmark.swift */,
 			);
 			path = Views;
@@ -661,7 +658,6 @@
 				0F2BE3F125E7A346005630AF /* DiscoverViewController.swift in Sources */,
 				0F43B10B25FA0C6100C7A046 /* MyLooksModel.swift in Sources */,
 				0FDFDEA425F925710049AEB1 /* FavoriteBrandsModel.swift in Sources */,
-				0F40799D2609ED880032BF85 /* CustomSlider.swift in Sources */,
 				0F2F25FC260661BF00376D9A /* ProductCell.swift in Sources */,
 				0F3AE53925E276900098536D /* Fonts.swift in Sources */,
 				0FCD369525F768C300DCEFEF /* CategoryCell.swift in Sources */,
