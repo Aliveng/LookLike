@@ -21,10 +21,23 @@ class WithClothesView: UIView {
         let view = UIImageView()
         view.image = .blouse47
         view.contentMode = .scaleAspectFit
-    //    view.layer.borderWidth = 1
-    //    view.layer.borderColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+      //  view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.touchTapped(_:)))
+            self.addGestureRecognizer(tap)
+        
+        return view
+    }()
+    
+
+    
+    lazy var customSlider: CustomSlider = {
+        let view = CustomSlider()
+        view.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -50,7 +63,7 @@ class WithClothesView: UIView {
     
     lazy var shoesImgView: UIImageView = {
         let view = UIImageView()
-        view.image = .shoes2
+    //    view.image = .shoes2
         view.contentMode = .scaleAspectFit
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
@@ -67,6 +80,17 @@ class WithClothesView: UIView {
         addSubview(topClothesImgView)
         addSubview(bagImgView)
         addSubview(shoesImgView)
+        addSubview(customSlider)
+        
+        customSlider.isHidden = true
+        
+        
+        customSlider.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-60)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(42)
+            $0.width.equalTo(295)
+        }
         
         headwearImgView.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -106,5 +130,12 @@ class WithClothesView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func touchTapped(_ sender: UITapGestureRecognizer) {
+        
+        customSlider.isHidden = false
+        print("Отобразить слайдер")
+        
     }
 }

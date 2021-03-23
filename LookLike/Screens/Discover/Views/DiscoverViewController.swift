@@ -33,6 +33,8 @@ class DiscoverViewController: UIViewController {
     
     lazy var withClothesView: WithClothesView = {
         let view = WithClothesView()
+        view.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        view.layer.borderWidth = 0.5
         return view
     }()
     
