@@ -40,7 +40,28 @@ class WithClothesView: UIView {
         view.maximumValue = 2
         view.isContinuous = true
         view.tintColor = #colorLiteral(red: 0.1621871024, green: 0.1865742252, blue: 0.3998256645, alpha: 1)
-        view.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
+        view.addTarget(self, action: #selector(self.sliderScaleValueDidChange(_:)), for: .valueChanged)
+        return view
+    }()
+    
+    lazy var sliderPosition: UISlider = {
+        let view = UISlider()
+        view.minimumValue = -10
+        view.maximumValue = 10
+        view.isContinuous = true
+        view.tintColor = #colorLiteral(red: 0.1621871024, green: 0.1865742252, blue: 0.3998256645, alpha: 1)
+        view.addTarget(self, action: #selector(self.sliderPositionValueDidChange(_:)), for: .valueChanged)
+        return view
+    }()
+    
+    lazy var sliderVertical: UISlider = {
+        let view = UISlider()
+        view.minimumValue = -10
+        view.maximumValue = 10
+        view.isContinuous = true
+        view.tintColor = #colorLiteral(red: 0.1621871024, green: 0.1865742252, blue: 0.3998256645, alpha: 1)
+        view.transform = CGAffineTransform(rotationAngle: .pi / -2)
+        view.addTarget(self, action: #selector(self.sliderVerticalValueDidChange(_:)), for: .valueChanged)
         return view
     }()
 
@@ -82,14 +103,32 @@ class WithClothesView: UIView {
         addSubview(bagImgView)
         addSubview(shoesImgView)
         addSubview(sliderScale)
+        addSubview(sliderPosition)
+        addSubview(sliderVertical)
         
         sliderScale.isHidden = true
+        sliderPosition.isHidden = true
+        sliderVertical.isHidden = true
 
         sliderScale.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-60)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(42)
             $0.width.equalTo(295)
+        }
+        
+        sliderPosition.snp.makeConstraints {
+            $0.top.equalTo(sliderScale.snp.bottom)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(42)
+            $0.width.equalTo(295)
+        }
+        
+        sliderVertical.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(100)
+            $0.right.equalToSuperview()
+            $0.height.equalTo(42)
+            $0.width.equalTo(100)
         }
         
         headwearImgView.snp.makeConstraints {
@@ -132,17 +171,31 @@ class WithClothesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func sliderValueDidChange(_ sender:UISlider!) {
+    @objc func sliderScaleValueDidChange(_ sender:UISlider!) {
         
         topClothesImgView.transform = CGAffineTransform(scaleX: CGFloat(sender.value),
                                                              y:  CGFloat(sender.value))
+        print(sender.value)
+    }
+    
+    @objc func sliderPositionValueDidChange(_ sender:UISlider!) {
         
+        topClothesImgView.transform = CGAffineTransform(translationX: CGFloat(sender.value),                                                         y: 0)
+        print(sender.value)
+    }
+    
+    @objc func sliderVerticalValueDidChange(_ sender:UISlider!) {
+        
+        topClothesImgView.transform = CGAffineTransform(translationX: 0, y: CGFloat(sender.value))
         print(sender.value)
     }
     
     @objc func touchTapped(_ sender: UITapGestureRecognizer) {
         
         sliderScale.isHidden = false
+        sliderPosition.isHidden = false
+        sliderVertical.isHidden = false
+        
         print("Отобразить слайдер")
         
     }
