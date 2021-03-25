@@ -16,7 +16,7 @@ class WithClothesView: UIView {
         view.alpha = 1
         return view
     }()
-
+    
     lazy var topClothesImgView: UIImageView = {
         let view = UIImageView()
         view.image = .blouse47
@@ -32,6 +32,10 @@ class WithClothesView: UIView {
         return view
     }()
     
+    var valueOfSliderScaleAfterChanges: Float = 0
+    var valueOfSliderPositionAfterChanges: Float = 0
+    var valueOfSliderVerticalAfterChanges: Float = 0
+    
     lazy var sliderScale: UISlider = {
         let view = UISlider()
         //  view.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -40,7 +44,7 @@ class WithClothesView: UIView {
         view.maximumValue = 2
         view.isContinuous = true
         view.tintColor = #colorLiteral(red: 0.1621871024, green: 0.1865742252, blue: 0.3998256645, alpha: 1)
-        view.addTarget(self, action: #selector(self.sliderScaleValueDidChange(_:)), for: .valueChanged)
+        view.addTarget(self, action: #selector(sliderScaleValueDidChange(slider:event:)),                                        for: .valueChanged)
         return view
     }()
     
@@ -50,7 +54,7 @@ class WithClothesView: UIView {
         view.maximumValue = 10
         view.isContinuous = true
         view.tintColor = #colorLiteral(red: 0.1621871024, green: 0.1865742252, blue: 0.3998256645, alpha: 1)
-        view.addTarget(self, action: #selector(self.sliderPositionValueDidChange(_:)), for: .valueChanged)
+        view.addTarget(self, action: #selector(sliderPositionValueDidChange(slider:event:)),                                     for: .valueChanged)
         return view
     }()
     
@@ -61,15 +65,15 @@ class WithClothesView: UIView {
         view.isContinuous = true
         view.tintColor = #colorLiteral(red: 0.1621871024, green: 0.1865742252, blue: 0.3998256645, alpha: 1)
         view.transform = CGAffineTransform(rotationAngle: .pi / -2)
-        view.addTarget(self, action: #selector(self.sliderVerticalValueDidChange(_:)), for: .valueChanged)
+        view.addTarget(self, action: #selector(sliderVerticalValueDidChange(slider:event:)),                                     for: .valueChanged)
         return view
     }()
-
+    
     lazy var bottomClothesImgView: UIImageView = {
         let view = UIImageView()
-        view.image = .jeans29
+        // view.image = .jeans29
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        //   view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         return view
     }()
@@ -87,7 +91,7 @@ class WithClothesView: UIView {
         let view = UIImageView()
         //    view.image = .shoes2
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        //  view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         return view
     }()
@@ -109,7 +113,7 @@ class WithClothesView: UIView {
         sliderScale.isHidden = true
         sliderPosition.isHidden = true
         sliderVertical.isHidden = true
-
+        
         sliderScale.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-60)
             $0.centerX.equalToSuperview()
@@ -137,14 +141,14 @@ class WithClothesView: UIView {
             $0.width.equalTo(122)
             $0.centerX.equalToSuperview().offset(-10)
         }
-
+        
         topClothesImgView.snp.makeConstraints {
             $0.top.equalTo(headwearImgView.snp.bottom).offset(-10)
             $0.height.equalTo(119)
             $0.width.equalTo(138)
             $0.centerX.equalToSuperview().offset(-14)
         }
-
+        
         bottomClothesImgView.snp.makeConstraints {
             $0.bottom.equalTo(shoesImgView.snp.top)
             $0.height.equalTo(278)
@@ -171,23 +175,62 @@ class WithClothesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func sliderScaleValueDidChange(_ sender:UISlider!) {
+    @objc func sliderScaleValueDidChange(slider: UISlider, event: UIEvent) {
         
-        topClothesImgView.transform = CGAffineTransform(scaleX: CGFloat(sender.value),
-                                                             y:  CGFloat(sender.value))
-        print(sender.value)
+        topClothesImgView.transform = CGAffineTransform(scaleX: CGFloat(slider.value),
+                                                        y:  CGFloat(slider.value))
+        
+        if let touchEvent = event.allTouches?.first {
+            switch touchEvent.phase {
+            case .began:
+                print("began")
+            case .moved:
+                print(slider.value)
+            case .ended:
+                valueOfSliderScaleAfterChanges = slider.value
+                print("Scale ended of - \(valueOfSliderScaleAfterChanges)")
+            default:
+                break
+            }
+        }
     }
     
-    @objc func sliderPositionValueDidChange(_ sender:UISlider!) {
+    @objc func sliderPositionValueDidChange(slider: UISlider, event: UIEvent) {
         
-        topClothesImgView.transform = CGAffineTransform(translationX: CGFloat(sender.value),                                                         y: 0)
-        print(sender.value)
+        topClothesImgView.transform = CGAffineTransform(translationX: CGFloat(slider.value),                                              y: 0)
+        
+        if let touchEvent = event.allTouches?.first {
+            switch touchEvent.phase {
+            case .began:
+                print("began")
+            case .moved:
+                print(slider.value)
+            case .ended:
+                valueOfSliderPositionAfterChanges = slider.value
+                print("Position ended of - \(valueOfSliderPositionAfterChanges)")
+            default:
+                break
+            }
+        }
     }
     
-    @objc func sliderVerticalValueDidChange(_ sender:UISlider!) {
+    @objc func sliderVerticalValueDidChange(slider: UISlider, event: UIEvent) {
         
-        topClothesImgView.transform = CGAffineTransform(translationX: 0, y: CGFloat(sender.value))
-        print(sender.value)
+        topClothesImgView.transform = CGAffineTransform(translationX: 0, y: CGFloat(slider.value))
+        
+        if let touchEvent = event.allTouches?.first {
+            switch touchEvent.phase {
+            case .began:
+                print("began")
+            case .moved:
+                print(slider.value)
+            case .ended:
+                valueOfSliderVerticalAfterChanges = slider.value
+                print("Vertical ended of - \(valueOfSliderVerticalAfterChanges)")
+            default:
+                break
+            }
+        }
     }
     
     @objc func touchTapped(_ sender: UITapGestureRecognizer) {
