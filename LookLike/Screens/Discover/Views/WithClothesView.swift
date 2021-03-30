@@ -36,6 +36,8 @@ class WithClothesView: UIView {
     var valueOfSliderPositionAfterChanges: Float = 0
     var valueOfSliderVerticalAfterChanges: Float = 0
     
+    var productParametricTransformAfterSliders: [Float] = []
+    
     lazy var sliderScale: UISlider = {
         let view = UISlider()
         //  view.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -204,9 +206,15 @@ class WithClothesView: UIView {
             case .began:
                 print("began")
             case .moved:
+                
+                topClothesImgView.transform = CGAffineTransform(scaleX: CGFloat(valueOfSliderScaleAfterChanges),
+                    y:  CGFloat(valueOfSliderScaleAfterChanges))
+                
                 print(slider.value)
             case .ended:
+                
                 valueOfSliderPositionAfterChanges = slider.value
+                
                 print("Position ended of - \(valueOfSliderPositionAfterChanges)")
             default:
                 break
