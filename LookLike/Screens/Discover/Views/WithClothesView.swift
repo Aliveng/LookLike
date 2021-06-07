@@ -21,8 +21,6 @@ class WithClothesView: UIView {
         let view = UIImageView()
         view.image = .blouse47
         view.contentMode = .scaleAspectFit
-        view.layer.borderWidth = 0.5
-        view.layer.borderColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         
@@ -40,8 +38,6 @@ class WithClothesView: UIView {
     
     lazy var sliderScale: UISlider = {
         let view = UISlider()
-        //  view.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        //  view.layer.borderWidth = 0.5
         view.minimumValue = 1
         view.maximumValue = 2
         view.isContinuous = true
@@ -73,9 +69,7 @@ class WithClothesView: UIView {
     
     lazy var bottomClothesImgView: UIImageView = {
         let view = UIImageView()
-        // view.image = .jeans29
         view.contentMode = .scaleAspectFit
-        //   view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         return view
     }()
@@ -91,9 +85,7 @@ class WithClothesView: UIView {
     
     lazy var shoesImgView: UIImageView = {
         let view = UIImageView()
-        //    view.image = .shoes2
         view.contentMode = .scaleAspectFit
-        //  view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.alpha = 1
         return view
     }()
